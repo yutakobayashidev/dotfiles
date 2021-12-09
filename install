@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+if [ ! -f /opt/homebrew/bin/brew ]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
+
+if [ ! -d ~/dotfiles ]; then
+    cd ~
+    git clone git@github.com:yutakobayashi/dotfiles.git
+fi
+
+brew bundle -v --file=~/dotfiles/Brewfile
+
+if [ ! -d ~/.config ]; then
+    mkdir ~/.config
+fi
+
+stow -v -d ~/dotfiles/packages -t ~ zsh starship
