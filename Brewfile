@@ -3,6 +3,7 @@ tap "homebrew/cask-fonts"
 cask_args appdir: "/Applications"
 
 brew "stow"
+brew "gpg"
 brew "asdf"
 brew "coreutils"
 brew "curl"
