@@ -1,0 +1,47 @@
+#!/bin/sh
+
+echo 🔨 Configuring macOS default settings
+
+###########################################################
+# General
+###########################################################
+
+# Disable the “Are you sure you want to open this application?” dialog
+
+dfaults wreite com.apple.LaunchServices LSQuarantine -bool false
+
+###########################################################
+# Finder
+###########################################################
+
+# Change the default directory name to English.
+
+rm ~/Downloads/.localized | rm ~/Documents/.localized | rm ~/Applications/.localized | rm ~/Desktop/.localized | rm ~/Library/.localized | rm ~/Movies/.localized | rm ~/Pictures/.localized | rm ~/Music/.localized | rm ~/Public/.
+
+# Show all file extensions inside the Finder
+
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+
+###########################################################
+# Screenshot
+###########################################################
+
+# Change the screenshot extension to jpg
+
+defaults write com.apple.screencapture type jpg
+
+# Create a directory to save the screenshots.
+
+mkdir ~/Pictures/screenshots/
+
+# Set default screenshot location.
+
+defaults write com.apple.screencapture "location" -string "~/Pictures/screenshots" && killall SystemUIServer
+
+###########################################################
+# reboot
+###########################################################
+
+# Finder
+
+killall Finder
