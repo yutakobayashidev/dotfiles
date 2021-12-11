@@ -14,3 +14,9 @@ error_symbol = "☔️"
 
 [nodejs]
 disabled = true
+
+[package]
+disabled = true
+
+[php]
+disabled = true
