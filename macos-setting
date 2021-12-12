@@ -26,6 +26,10 @@ defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
 # Screenshot
 ###########################################################
 
+# Change the first file name to English.
+
+defaults write com.apple.screencapture name screenshots
+
 # Change the screenshot extension to jpg
 
 defaults write com.apple.screencapture type jpg
@@ -36,7 +40,7 @@ mkdir ~/Pictures/screenshots/
 
 # Set default screenshot location.
 
-defaults write com.apple.screencapture "location" -string "~/Pictures/screenshots" && killall SystemUIServer
+defaults write com.apple.screencapture "location" -string "~/Pictures/screenshots"
 
 ###########################################################
 # reboot
@@ -45,3 +49,8 @@ defaults write com.apple.screencapture "location" -string "~/Pictures/screenshot
 # Finder
 
 killall Finder
+
+
+# menu bar
+
+killall SystemUIServer

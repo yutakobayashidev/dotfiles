@@ -7,16 +7,25 @@ log() {
     echo 🚀 "$message"
 }
 
+is_file() {
+    path="$1"
+    [ -f "$path" ]
+}
+
 is_dir() {
     path="$1"
     [ -d "$path" ]
 }
 
-if [ ! -f /opt/homebrew/bin/brew ]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+if ! is_file /opt/homebrew/bin/brew; then
+    log 'Setup Homebrew'
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    log 'Install Rosetta 2'
+    sudo softwareupdate --install-rosetta
 fi
 
-if [ ! -d ~/dotfiles ]; then
+if ! is_dir ~/dotfiles; then
     log 'Clone dotfiles'
     cd ~
     git clone git@github.com:yutakobayashidev/dotfiles.git
@@ -24,11 +33,18 @@ fi
 
 brew bundle -v --file=~/dotfiles/Brewfile
 
-if [ ! -d ~/.config ]; then
+log 'Link dotfiles'
+if ! is_dir ~/.config; then
     mkdir ~/.config
 fi
 
 stow -v -d ~/dotfiles/packages -t ~ zsh starship asdf
+
+# macOS settings
+
+~/dotfiles/macos-setting
+
+# asdf
 
 for plugin in $(awk '{print $1}' ~/.tool-versions); do
     if ! is_dir ~/.asdf/plugins/"$plugin"; then
