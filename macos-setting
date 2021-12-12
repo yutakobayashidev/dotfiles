@@ -22,6 +22,26 @@ rm ~/Downloads/.localized | rm ~/Documents/.localized | rm ~/Applications/.local
 
 defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
 
+# Disable the warning before emptying the Trash
+
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+###########################################################
+# Dock
+###########################################################
+
+# Auto-hide the Dock
+
+defaults write com.apple.dock autohide -bool true
+
+# Time until the dock appears.
+
+defaults write com.apple.dock autohide-delay -float 0;
+
+# Remove the Dock autohide animation
+
+defaults write com.apple.dock "autohide-time-modifier" -float "0"
+
 ###########################################################
 # Screenshot
 ###########################################################
@@ -54,3 +74,7 @@ killall Finder
 # menu bar
 
 killall SystemUIServer
+
+# dock
+
+killall Dock
