@@ -22,6 +22,14 @@ rm ~/Downloads/.localized | rm ~/Documents/.localized | rm ~/Applications/.local
 
 defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
 
+# Show hidden files inside the Finder
+
+defaults write com.apple.Finder "AppleShowAllFiles" -bool "true"
+
+# Do not display the warning
+
+defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
+
 # Disable the warning before emptying the Trash
 
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
