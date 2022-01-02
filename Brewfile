@@ -9,8 +9,10 @@ brew "coreutils"
 brew "curl"
 brew "git"
 brew "starship"
+brew "watchman"
+brew "cocoapods"
 brew "ffmpeg"
-brew "youtube-dl"
+brew "yt-dlp"
 
 cask "google-japanese-ime"
 cask "google-chrome"
@@ -19,6 +21,7 @@ cask "tor-browser"
 cask "alfred"
 cask "clipy"
 cask "spectacle"
+cask "cleanmymac"
 cask "clip-studio-paint"
 cask "dropbox"
 cask "google-drive"
@@ -52,6 +55,7 @@ cask "miro"
 cask "notion"
 
 cask "font-fira-code"
+cask "adoptopenjdk/openjdk/adoptopenjdk8"
 
 mas "Xcode", id: 497799835
 mas "Craft", id: 1487937127
