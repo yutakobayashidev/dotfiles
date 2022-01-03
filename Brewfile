@@ -37,6 +37,7 @@ cask "keybase"
 cask "blender"
 cask "blockbench"
 cask "discord"
+cask "betterdiscord-installer"
 cask "slack"
 cask "signal"
 cask "deepl"
@@ -56,6 +57,7 @@ cask "notion"
 
 cask "font-fira-code"
 cask "adoptopenjdk/openjdk/adoptopenjdk8"
+cask "khanhas/tap/spicetify-cli"
 
 mas "Xcode", id: 497799835
 mas "Craft", id: 1487937127
