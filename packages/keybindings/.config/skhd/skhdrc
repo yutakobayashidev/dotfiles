@@ -1,0 +1,15 @@
+# Applications
+alt - 0 : open -n /Applications/Brave\ Browser.app
+alt + shift - n : open /Applications/Notion.app
+alt + shift - e : open /Applications/Eagle.app
+alt + shift - d : open /Applications/Discord.app
+
+# close
+alt - c : yabai -m window --close
+
+# toggle mission control
+shift + alt - m : yabai -m space --toggle mission-control
+
+# mirror
+alt - m : yabai -m space --mirror y-axis \
+    && yabai -m window --focus first

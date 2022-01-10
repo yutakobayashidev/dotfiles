@@ -38,7 +38,7 @@ if ! is_dir ~/.config; then
     mkdir ~/.config
 fi
 
-stow -v -d ~/dotfiles/packages -t ~ zsh starship asdf
+stow -v -d ~/dotfiles/packages -t ~ zsh terminal asdf wm keybindings
 
 # macOS settings
 

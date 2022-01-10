@@ -311,22 +311,25 @@
     },
     "tap": {
       "homebrew/cask": {
-        "revision": "2cb2f004e9b8abd6a674ce6211152c41d155b2b0"
+        "revision": "412fb64a121fa6bc6a21746f8def6288098eaab7"
       },
       "homebrew/cask-fonts": {
-        "revision": "f39d84adeac236e9f48fed0aefd02e51626b6f5f"
+        "revision": "5832933a2dddc2aa2cbb9c92e490579db5fd1cc1"
+      },
+      "koekeishiya/formulae": {
+        "revision": "2840281ee15bebd679f4af0a8750bfabeba6e25f"
       }
     }
   },
   "system": {
     "macos": {
       "monterey": {
-        "HOMEBREW_VERSION": "3.3.7",
+        "HOMEBREW_VERSION": "3.3.9",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "e160df1adbf486ef1226d91f87d8665fa3e5c448",
-        "CLT": "12.5.0.22.9",
-        "Xcode": "13.1",
-        "macOS": "12.0.1"
+        "Homebrew/homebrew-core": "0a3b4d246c726e7474159f6f9fc3d01e156517f4",
+        "CLT": "13.2.0.0.1.1638488800",
+        "Xcode": "13.2.1",
+        "macOS": "12.1"
       }
     }
   }
