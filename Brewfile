@@ -23,8 +23,9 @@ brew "yt-dlp"
 
 cask "google-japanese-ime"
 cask "brave-browser"
-cask "tor-browser"
 cask "alfred"
+cask "audacity"
+cask "fl-studio"
 cask "clipy"
 cask "cleanmymac"
 cask "clip-studio-paint"
@@ -67,7 +68,9 @@ cask "adoptopenjdk/openjdk/adoptopenjdk8"
 cask "khanhas/tap/spicetify-cli"
 
 mas "Xcode", id: 497799835
+mas "Runcat", id: 1429033973 
 mas "Craft", id: 1487937127
 mas "TweetDeck", id: 485812721
 mas "NordVPN", id: 905953485
+mas "MeetingBar", id: 1532419400
 mas "MenubarX", id: 1575588022
