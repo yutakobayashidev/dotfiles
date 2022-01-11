@@ -60,13 +60,16 @@ brew bundle -v --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
 fi
 
 
+if [ ! "$skip_apps" ]; then
 if ! is_dir ~/.config/spicetify; then
-log 'spicetify-cli setup'
-curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
-spicetify
-spicetify backup enable-devtool
+    log 'spicetify-cli setup'
+    curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
+    spicetify
+    spicetify backup enable-devtool
+fi
 fi
 
+if [ ! "$skip_apps" ]; then
 if ! is_dir ~/.config/spicetify/Themes/spotify-redesign; then
     log 'Clone spotify-redesign'
     cd  ~/.config/spicetify/Themes
@@ -74,6 +77,7 @@ if ! is_dir ~/.config/spicetify/Themes/spotify-redesign; then
 
     spicetify config current_theme spotify-redesign
     spicetify apply
+fi
 fi
 
 
