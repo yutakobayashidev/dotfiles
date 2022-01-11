@@ -65,7 +65,6 @@ cask "notion"
 
 cask "font-fira-code"
 cask "adoptopenjdk/openjdk/adoptopenjdk8"
-cask "khanhas/tap/spicetify-cli"
 
 mas "Xcode", id: 497799835
 mas "Runcat", id: 1429033973 

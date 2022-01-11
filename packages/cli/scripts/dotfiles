@@ -54,11 +54,28 @@ if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
     git clone git@github.com:yutakobayashidev/dotfiles.git
 fi
 
-
 if [ ! "$skip_apps" ]; then
 log 'Install Apps and CLIs'
 brew bundle -v --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
 fi
+
+
+if ! is_dir ~/.config/spicetify; then
+log 'spicetify-cli setup'
+curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
+spicetify
+spicetify backup enable-devtool
+fi
+
+if ! is_dir ~/.config/spicetify/Themes/spotify-redesign; then
+    log 'Clone spotify-redesign'
+    cd  ~/.config/spicetify/Themes
+    git clone git@github.com:yutakobayashidev/spotify-redesign.git
+
+    spicetify config current_theme spotify-redesign
+    spicetify apply
+fi
+
 
 log 'Link dotfiles'
 if ! is_dir ~/.config; then
