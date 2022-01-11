@@ -34,6 +34,10 @@ defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
 
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
+# .DS_Store Disable
+
+defaults write com.apple.desktopservices DSDontWriteNetworkStores True
+
 ###########################################################
 # Dock
 ###########################################################

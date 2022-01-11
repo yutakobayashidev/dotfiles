@@ -69,7 +69,6 @@ cask "khanhas/tap/spicetify-cli"
 
 mas "Xcode", id: 497799835
 mas "Runcat", id: 1429033973 
-mas "Craft", id: 1487937127
 mas "TweetDeck", id: 485812721
 mas "NordVPN", id: 905953485
 mas "MeetingBar", id: 1532419400

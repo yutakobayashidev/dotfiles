@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo 📦 npm global install
+
+npm i -g notion-enhancer

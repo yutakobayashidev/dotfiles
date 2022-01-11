@@ -1,0 +1,109 @@
+#!/bin/sh
+
+set -e
+
+GIT_CLONE_PATH=~/projects/github.com/yutakobayashidev
+STOW_PACKAGES_PATH="$GIT_CLONE_PATH"/dotfiles/packages
+
+for i in "$@"; do
+    case "$i" in
+       -s|--skip-apps)
+            skip_apps=1
+            shift ;;
+        *) ;;
+    esac
+done
+
+
+log() {
+    message=$1
+    echo 🚀 "$message"
+}
+
+is_file() {
+    path="$1"
+    [ -f "$path" ]
+}
+
+is_dir() {
+    path="$1"
+    [ -d "$path" ]
+}
+
+arch_name="$(uname -m)"
+
+if [ "${arch_name}" = "x86_64" ]; then
+    if ! is_file /usr/local/bin/brew; then
+        log 'Setup Homebrew'
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    fi
+elif [ "${arch_name}" = "arm64" ]; then
+    if ! is_file /opt/homebrew/bin/brew; then
+        log 'Setup Homebrew'
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+
+        log 'Install Rosetta 2'
+        sudo softwareupdate --install-rosetta
+    fi
+fi
+
+if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
+    log 'Clone dotfiles'
+    cd "$GIT_CLONE_PATH"
+    git clone git@github.com:yutakobayashidev/dotfiles.git
+fi
+
+
+if [ ! "$skip_apps" ]; then
+log 'Install Apps and CLIs'
+brew bundle -v --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
+fi
+
+log 'Link dotfiles'
+if ! is_dir ~/.config; then
+    mkdir ~/.config
+fi
+
+stow -v -d "$STOW_PACKAGES_PATH" -t ~ zsh terminal asdf wm keybindings
+
+# macOS settings
+
+"$STOW_PACKAGES_PATH"/cli/scripts/macos-setting
+
+# asdf
+
+for plugin in $(awk '{print $1}' ~/.tool-versions); do
+    if ! is_dir ~/.asdf/plugins/"$plugin"; then
+        asdf plugin add "$plugin"
+    fi
+done
+
+is_runtime_versions_changed () {
+    plugin="$1"
+    specified=$(grep "$plugin" ~/.tool-versions | awk '{$1=""; print $0}')
+    installed=$(asdf list "$plugin" 2>&1)
+
+    is_changed=
+    for version in $specified; do
+        match=$(echo "$installed" | grep "$version")
+        [ -z "$match" ] && is_changed=1
+    done
+
+    [ "$is_changed" ]
+}
+
+for plugin in $(asdf plugin list); do
+    if is_runtime_versions_changed "$plugin"; then
+        log "Install runtime: $plugin"
+        asdf install "$plugin"
+    fi
+done
+
+# npm global
+
+"$STOW_PACKAGES_PATH"/cli/scripts/npm
+
+# Insert the notion-enhancer into Notion
+
+notion-enhancer apply
