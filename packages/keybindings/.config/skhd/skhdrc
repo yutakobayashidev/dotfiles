@@ -1,6 +1,7 @@
 # Applications
 alt - 0 : open -n /Applications/Brave\ Browser.app
 alt + shift - n : open /Applications/Notion.app
+alt + shift - c : open /Applications/Visual\ Studio\ Code.app
 alt + shift - e : open /Applications/Eagle.app
 alt + shift - d : open /Applications/Discord.app
 

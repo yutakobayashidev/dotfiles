@@ -14,7 +14,6 @@ for i in "$@"; do
     esac
 done
 
-
 log() {
     message=$1
     echo 🚀 "$message"
@@ -86,7 +85,7 @@ if ! is_dir ~/.config; then
     mkdir ~/.config
 fi
 
-stow -v -d "$STOW_PACKAGES_PATH" -t ~ zsh terminal asdf wm keybindings
+stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
 # macOS settings
 

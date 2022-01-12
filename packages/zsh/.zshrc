@@ -5,9 +5,8 @@ eval "$(starship init zsh)"
 # alias
 
 alias ll='ls -l'
-
 alias code="open -a 'Visual Studio Code'"
-
+alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
 alias y='yarn'
 alias yi='yarn install'
 alias ya='yarn add'
