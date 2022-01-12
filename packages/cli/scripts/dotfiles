@@ -89,7 +89,7 @@ stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
 # macOS settings
 
-"$STOW_PACKAGES_PATH"/cli/scripts/macos-setting
+~/scripts/macos-setting
 
 # asdf
 
@@ -122,7 +122,7 @@ done
 
 # npm global
 
-"$STOW_PACKAGES_PATH"/cli/scripts/npm
+~/scripts/cli/scripts/npm
 
 # Insert the notion-enhancer into Notion
 
