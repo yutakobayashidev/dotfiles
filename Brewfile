@@ -1,7 +1,8 @@
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
-tap "koekeishiya/formulae"
+tap "homebrew/cask-drivers"
 tap "ethereum/ethereum"
+tap "koekeishiya/formulae"
 cask_args appdir: "/Applications"
 
 brew "neofetch"
@@ -25,6 +26,7 @@ cask "google-japanese-ime"
 cask "brave-browser"
 cask "alfred"
 cask "audacity"
+cask "elgato-stream-deck"
 cask "fl-studio"
 cask "clipy"
 cask "cleanmymac"
@@ -71,4 +73,3 @@ mas "Runcat", id: 1429033973
 mas "TweetDeck", id: 485812721
 mas "NordVPN", id: 905953485
 mas "MeetingBar", id: 1532419400
-mas "MenubarX", id: 1575588022

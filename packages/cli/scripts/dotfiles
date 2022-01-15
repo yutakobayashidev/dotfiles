@@ -79,7 +79,6 @@ if ! is_dir ~/.config/spicetify/Themes/spotify-redesign; then
 fi
 fi
 
-
 log 'Link dotfiles'
 if ! is_dir ~/.config; then
     mkdir ~/.config
