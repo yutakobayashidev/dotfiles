@@ -58,7 +58,6 @@ log 'Install Apps and CLIs'
 brew bundle -v --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
 fi
 
-
 if [ ! "$skip_apps" ]; then
 if ! is_dir ~/.config/spicetify; then
     log 'spicetify-cli setup'
@@ -77,6 +76,10 @@ if ! is_dir ~/.config/spicetify/Themes/spotify-redesign; then
     spicetify config current_theme spotify-redesign
     spicetify apply
 fi
+fi
+
+elif [ "${arch_name}" = "arm64" ]; then
+    sudo xattr -r -d com.apple.quarantine /Applications/JQuake.app
 fi
 
 log 'Link dotfiles'
