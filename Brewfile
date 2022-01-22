@@ -63,7 +63,6 @@ cask "minecraft"
 cask "adobe-creative-cloud"
 cask "ogdesign-eagle"
 cask "figma"
-cask "canva"
 cask "miro"
 cask "notion"
 

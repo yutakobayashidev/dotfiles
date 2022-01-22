@@ -78,7 +78,7 @@ if ! is_dir ~/.config/spicetify/Themes/spotify-redesign; then
 fi
 fi
 
-elif [ "${arch_name}" = "arm64" ]; then
+if [ "${arch_name}" = "arm64" ]; then
     sudo xattr -r -d com.apple.quarantine /Applications/JQuake.app
 fi
 
