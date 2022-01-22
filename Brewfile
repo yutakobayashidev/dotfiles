@@ -72,6 +72,5 @@ cask "adoptopenjdk/openjdk/adoptopenjdk8"
 
 mas "Xcode", id: 497799835
 mas "Runcat", id: 1429033973 
-mas "TweetDeck", id: 485812721
 mas "NordVPN", id: 905953485
 mas "MeetingBar", id: 1532419400
