@@ -66,10 +66,6 @@ defaults write com.apple.screencapture name screenshots
 
 defaults write com.apple.screencapture type jpg
 
-# Create a directory to save the screenshots.
-
-mkdir ~/Pictures/screenshots/
-
 # Set default screenshot location.
 
 defaults write com.apple.screencapture "location" -string "~/Pictures/screenshots"

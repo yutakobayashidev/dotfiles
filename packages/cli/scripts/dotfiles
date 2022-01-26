@@ -89,6 +89,10 @@ fi
 
 stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
+# Create a directory to save the screenshots.
+
+mkdir ~/Pictures/screenshots/
+
 # macOS settings
 
 ~/scripts/macos-setting
