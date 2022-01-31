@@ -29,6 +29,13 @@ is_dir() {
     [ -d "$path" ]
 }
 
+ensure_dir() {
+    path="$1"
+    if ! is_dir "$path"; then
+        mkdir -p "$path"
+    fi
+}
+
 arch_name="$(uname -m)"
 
 if [ "${arch_name}" = "x86_64" ]; then
@@ -89,12 +96,9 @@ fi
 
 stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
-# Create a directory to save the screenshots.
-
-mkdir ~/Pictures/screenshots/
-
 # macOS settings
 
+ensure_dir ~/Pictures/screenshots/
 ~/scripts/macos-setting
 
 # asdf
@@ -125,6 +129,16 @@ for plugin in $(asdf plugin list); do
         asdf install "$plugin"
     fi
 done
+
+limelight_path=/usr/local/bin/limelight
+if ! is_file "$limelight_path"; then
+    git clone https://github.com/koekeishiya/limelight
+    cd limelight
+    make
+    mv ./bin/limelight /usr/local/bin/limelight
+    cd ../
+    rm -rf limelight
+fi
 
 # npm global
 
