@@ -2,4 +2,7 @@
 
 echo 📦 npm global install
 
-npm i -g notion-enhancer
+run_npm() {
+  npm i -g \
+    notion-enhancer 
+}
