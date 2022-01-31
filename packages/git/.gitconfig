@@ -8,4 +8,4 @@
 	process = git-lfs filter-process
 	required = true
 [include]
-path = ~/.gitconfig.local
+path = ~/Dropbox/dotfiles/.gitconfig.local
