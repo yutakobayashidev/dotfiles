@@ -143,7 +143,4 @@ fi
 # npm global
 
 ~/scripts/npm
-
-# Insert the notion-enhancer into Notion
-
 notion-enhancer apply
