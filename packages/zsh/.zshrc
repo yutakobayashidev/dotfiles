@@ -13,6 +13,9 @@ alias yi='yarn install'
 alias ya='yarn add'
 alias n='npm'
 alias ni='npm install'
+alias ghw='gh repo view -w $(ghq list | peco)'
+alias vs='code $(ghq list -p | peco)'
+alias pr='gh pr view --web'
 
 # export
 

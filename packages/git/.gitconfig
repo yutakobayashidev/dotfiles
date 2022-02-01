@@ -1,3 +1,5 @@
+[include]
+path = ~/Dropbox/dotfiles/.gitconfig.local
 [core]
 	precomposeUnicode = true
 [init]
@@ -7,5 +9,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[include]
-path = ~/Dropbox/dotfiles/.gitconfig.local
+[ghq]
+  root = ~/projects/github/yutakobayashidev
