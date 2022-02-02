@@ -59,7 +59,7 @@ ensure_dir "$GIT_CLONE_PATH"
 if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
     log 'Clone dotfiles'
     cd "$GIT_CLONE_PATH"
-    git clone git@github.com:yutakobayashidev/dotfiles.git
+    git clone https://github.com/yutakobayashidev/dotfiles.git
 fi
 
 if [ ! "$skip_apps" ]; then
@@ -80,7 +80,7 @@ if [ ! "$skip_apps" ]; then
 if ! is_dir ~/.config/spicetify/Themes/spotify-redesign; then
     log 'Clone spotify-redesign'
     cd  ~/.config/spicetify/Themes
-    git clone git@github.com:yutakobayashidev/spotify-redesign.git
+    git clone https://github.com/yutakobayashidev/spotify-redesign.git
 
     spicetify config current_theme spotify-redesign
     spicetify apply

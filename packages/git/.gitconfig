@@ -11,3 +11,5 @@ path = ~/Dropbox/dotfiles/.gitconfig.local
 	required = true
 [ghq]
   root = ~/projects/github/yutakobayashidev
+[gpg]
+	program = gpg
