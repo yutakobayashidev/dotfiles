@@ -54,6 +54,8 @@ elif [ "${arch_name}" = "arm64" ]; then
     fi
 fi
 
+ensure_dir "$GIT_CLONE_PATH"
+
 if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
     log 'Clone dotfiles'
     cd "$GIT_CLONE_PATH"
@@ -90,9 +92,7 @@ if [ "${arch_name}" = "arm64" ]; then
 fi
 
 log 'Link dotfiles'
-if ! is_dir ~/.config; then
-    mkdir ~/.config
-fi
+ensure_dir ~/.config/yarn/global
 
 stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
@@ -140,7 +140,10 @@ if ! is_file "$limelight_path"; then
     rm -rf limelight
 fi
 
-# npm global
+echo 📦 yarn global
+if ! is_dir ~/.config/yarn/global/node_modules; then
+    log 'Setup Yarn global'
+    yarn global add
+fi
 
-~/scripts/npm
 notion-enhancer apply
