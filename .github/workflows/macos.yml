@@ -18,5 +18,5 @@ jobs:
 
     - name: Load .zshrc
       run: |
-        bash ~/packages/terminal/.zshrc 2> error.log; cat error.log
+        zsh ~/packages/terminal/.zshrc 2> error.log; cat error.log
         if [ -s error.log ]; then false; fi
