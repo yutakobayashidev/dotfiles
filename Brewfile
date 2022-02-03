@@ -1,6 +1,5 @@
 tap "ethereum/ethereum"
 tap "qmk/qmk"
-tap "koekeishiya/formulae"
 
 brew "neofetch"
 brew "wget"
@@ -31,6 +30,7 @@ if OS.mac? # mac only
     tap "homebrew/cask"
     tap "homebrew/cask-fonts"
     tap "homebrew/cask-drivers"
+    tap "koekeishiya/formulae"
     tap "yutakobayashidev/formulae"
     cask_args appdir: "/Applications"
 

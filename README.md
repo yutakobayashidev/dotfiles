@@ -14,7 +14,7 @@ dotfiles for macOS & Linux
 curl -o - https://raw.githubusercontent.com/yutakobayashidev/dotfiles/main/packages/cli/scripts/dotfiles | sh
 ```
 
-3. Restart OS
+3. Restart OS 
 
 
 ## Manual operations
@@ -23,7 +23,7 @@ curl -o - https://raw.githubusercontent.com/yutakobayashidev/dotfiles/main/packa
 
 1. add google-japanese-ime to input sources
 
-### Yabai and skhd
+### Yabai and skhd ( macOS Only )
 
 1. Execute the following command.
 
