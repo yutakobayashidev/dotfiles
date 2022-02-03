@@ -12,11 +12,14 @@ error_symbol = "☔️"
 
 # モジュールを無効化
 
+[gcloud]
+disabled = true
+
 [nodejs]
 disabled = true
 
-[package]
+[ruby]
 disabled = true
 
-[php]
+[rust]
 disabled = true

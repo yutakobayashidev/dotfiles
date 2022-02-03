@@ -1,3 +1,5 @@
+export PATH=$PATH:$HOME/scripts
+
 eval "$(starship init zsh)"
 eval "$(gh completion -s zsh)"
 
@@ -6,6 +8,7 @@ eval "$(gh completion -s zsh)"
 # alias
 
 alias ll='ls -l'
+alias lscmd="ls ~/scripts"
 alias code="open -a 'Visual Studio Code'"
 alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
 alias y='yarn'
@@ -20,12 +23,18 @@ alias pr='gh pr view --web'
 
 # export
 
+export GPG_TTY=$TTY
+
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:/Users/$USER/.npm-global/bin
+
+export PATH=$PATH:$(yarn global bin)
+
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # terminal
 

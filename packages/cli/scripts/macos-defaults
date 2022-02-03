@@ -1,0 +1,71 @@
+#!/bin/sh
+
+echo 🔨 Configuring macOS default settings
+
+# Finder
+
+# Change the default directory name to English.
+rm ~/Downloads/.localized | rm ~/Documents/.localized | rm ~/Applications/.localized | rm ~/Desktop/.localized | rm ~/Library/.localized | rm ~/Movies/.localized | rm ~/Pictures/.localized | rm ~/Music/.localized | rm ~/Public/.
+# Show all file extensions inside the Finder
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+# Show hidden files inside the Finder
+defaults write com.apple.Finder "AppleShowAllFiles" -bool "true"
+# Do not display the warning
+defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
+## Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+## Show the path bar
+defaults write com.apple.finder ShowPathbar -bool "true"
+
+# Dock
+
+## Auto-hide the Dock
+defaults write com.apple.dock autohide -bool true
+## Time until the dock appears.
+defaults write com.apple.dock autohide-delay -float 0;
+## Remove the Dock autohide animation
+defaults write com.apple.dock "autohide-time-modifier" -float "0"
+## Hide recently launched apps
+defaults write com.apple.dock "show-recents" -bool "false"
+
+# MenuBar
+
+## Battery %
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+## Clock
+defaults write com.apple.menuextra.clock DateFormat -string 'EEE d MMM HH:mm'
+
+# Trackpad
+
+# Feedback
+
+## Do not send feedback.
+defaults write com.apple.appleseed.FeedbackAssistant "Autogather" -bool "false"
+## Disable crash reports
+defaults write com.apple.CrashReporter DialogType -string "none"
+
+# Screenshots
+
+## Disable image shadows
+defaults write com.apple.screencapture "disable-shadow" -bool "true"
+## Change the first file name to English.
+defaults write com.apple.screencapture name screenshots
+## Change the screenshot extension to jpg
+defaults write com.apple.screencapture type jpg
+## Set default screenshot location.
+defaults write com.apple.screencapture "location" -string "~/Pictures/screenshots"
+
+# .DS_Store Disable
+
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool "true"
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool "true"
+
+# Text
+
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool "false"
+
+# DNS
+
+networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8

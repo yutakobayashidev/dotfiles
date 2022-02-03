@@ -2,7 +2,8 @@
 
 set -e
 
-GIT_CLONE_PATH=~/projects/github.com/yutakobayashidev
+YOR_GITHUB_USERNAME=yutakobayashidev
+GIT_CLONE_PATH=~/projects/github.com/"$YOR_GITHUB_USERNAME"
 STOW_PACKAGES_PATH="$GIT_CLONE_PATH"/dotfiles/packages
 
 for i in "$@"; do
@@ -37,6 +38,7 @@ ensure_dir() {
 }
 
 arch_name="$(uname -m)"
+uname=$(uname -a)
 
 if [ "${arch_name}" = "x86_64" ]; then
     if ! is_file /usr/local/bin/brew; then
@@ -98,8 +100,12 @@ stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
 # macOS settings
 
-ensure_dir ~/Pictures/screenshots/
-~/scripts/macos-setting
+if [ "$(uname)" = "Darwin" ]; then
+    ensure_dir ~/Pictures/screenshots/
+    ~/scripts/macos-defaults
+else
+  echo "📌 $(uname) does not support macos-setting, so skip it..."
+fi
 
 # asdf
 
@@ -145,5 +151,4 @@ if ! is_dir ~/.config/yarn/global/node_modules; then
     log 'Setup Yarn global'
     yarn global add
 fi
-
 notion-enhancer apply
