@@ -28,7 +28,8 @@ jobs:
         zsh ~/packages/terminal/.zshrc 2> error.log; cat error.log
         if [ -s error.log ]; then false; fi
     
-    - uses: sarisia/actions-status-discord@v1
+    - name: post status to Discord
       if: always()
+      uses: sarisia/actions-status-discord@v1
       with:
-      webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
