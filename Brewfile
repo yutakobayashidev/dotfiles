@@ -46,6 +46,7 @@ if OS.mac? # mac only
 
     cask "google-japanese-ime"
     cask "brave-browser"
+    cask "tor-browser"
     cask "google-cloud-sdk"
     cask "gpg-suite"
     cask "qmk-toolbox"

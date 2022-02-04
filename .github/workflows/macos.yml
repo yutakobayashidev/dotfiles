@@ -19,6 +19,7 @@ jobs:
         rm /usr/local/bin/aws_completer
         rm /usr/local/bin/pod
         rm /usr/local/bin/go
+        rm /usr/local/bin/gofmt
         rm "$HOME/.gitconfig"
 
     - name: Run dotfiles
