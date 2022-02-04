@@ -1,5 +1,6 @@
 tap "ethereum/ethereum"
 tap "qmk/qmk"
+tap 'shopify/shopify'
 
 brew "neofetch"
 brew "wget"
@@ -15,6 +16,7 @@ brew "zplug"
 brew "curl"
 brew "git"
 brew "gh"
+brew "shopify-cli"
 brew "awscli"
 brew "starship"
 brew "watchman"
@@ -58,6 +60,7 @@ if OS.mac? # mac only
     cask "1password"
     cask "visual-studio-code"
     cask "intellij-idea"
+    cask "pycharm"
     cask "android-studio"
     cask "bluestacks" if system '[ "$(uname -m)" = "x86_64" ]'
     cask "virtualbox" if system '[ "$(uname -m)" = "x86_64" ]'
