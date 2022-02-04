@@ -19,7 +19,6 @@ jobs:
         rm /usr/local/bin/aws_completer
         rm /usr/local/bin/pod
         rm "$HOME/.gitconfig"
-        rm "$HOME/.zshrc"
 
     - name: Run dotfiles
       run: ${GITHUB_WORKSPACE}/packages/cli/scripts/dotfiles
@@ -28,11 +27,8 @@ jobs:
       run: |
         zsh ~/packages/terminal/.zshrc 2> error.log; cat error.log
         if [ -s error.log ]; then false; fi
-
-    - name: Discord notifications
-      run: ${GITHUB_WORKSPACE}/packages/cli/scripts/dotfiles
-
+    
     - uses: sarisia/actions-status-discord@v1
       if: always()
       with:
-        webhook: ${{ secrets.DISCORD_WEBHOOK }}
+      webhook: ${{ secrets.DISCORD_WEBHOOK }}
