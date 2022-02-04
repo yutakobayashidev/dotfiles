@@ -107,7 +107,7 @@ if [ "$(uname)" = "Darwin" ]; then
     ensure_dir ~/Pictures/screenshots/
     ~/scripts/macos-defaults
 else
-  echo "📌 $(uname) does not support macos-setting, so skip it..."
+  echo "📌 $(uname) does not support macos-defaults, so skip it..."
 fi
 
 # asdf
