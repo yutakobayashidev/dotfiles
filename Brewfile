@@ -1,6 +1,7 @@
 tap "ethereum/ethereum"
 tap "qmk/qmk"
 tap 'shopify/shopify'
+tap 'khanhas/tap'
 
 brew "neofetch"
 brew "wget"
@@ -23,6 +24,7 @@ brew "watchman"
 brew "cocoapods"
 brew "ffmpeg"
 brew "shpotify"
+brew "spicetify-cli"
 brew "ethereum"
 brew "yt-dlp"
 brew "qmk"
@@ -62,6 +64,7 @@ if OS.mac? # mac only
     cask "intellij-idea"
     cask "pycharm"
     cask "android-studio"
+    cask "adoptopenjdk/openjdk/adoptopenjdk8"
     cask "bluestacks" if system '[ "$(uname -m)" = "x86_64" ]'
     cask "virtualbox" if system '[ "$(uname -m)" = "x86_64" ]'
     cask "alacritty"
@@ -103,5 +106,4 @@ if OS.mac? # mac only
     # Fonts
     cask "font-fira-code-nerd-font"
     cask "font-mplus"
-    cask "adoptopenjdk/openjdk/adoptopenjdk8"
 end

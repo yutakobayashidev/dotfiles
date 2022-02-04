@@ -69,10 +69,16 @@ log 'Install Apps and CLIs'
 brew bundle -v --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
 fi
 
+log 'Link dotfiles'
+ensure_dir ~/.config/yarn/global
+
+stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
+
+# spicetify
+
 if [ ! "$skip_apps" ]; then
 if ! is_dir ~/.config/spicetify; then
     log 'spicetify-cli setup'
-    curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
     spicetify
     spicetify backup enable-devtool
 fi
@@ -89,14 +95,11 @@ if ! is_dir ~/.config/spicetify/Themes/spotify-redesign; then
 fi
 fi
 
+# JQuake
+
 if [ "${arch_name}" = "arm64" ]; then
     sudo xattr -r -d com.apple.quarantine /Applications/JQuake.app
 fi
-
-log 'Link dotfiles'
-ensure_dir ~/.config/yarn/global
-
-stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
 # macOS settings
 
