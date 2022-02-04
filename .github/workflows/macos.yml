@@ -17,7 +17,6 @@ jobs:
       run: |
         rm /usr/local/bin/aws
         rm /usr/local/bin/aws_completer
-        rm /usr/local/aws-cli
         rm /usr/local/bin/pod
         rm "$HOME/.gitconfig"
 
