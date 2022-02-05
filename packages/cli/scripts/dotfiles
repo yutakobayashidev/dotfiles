@@ -74,27 +74,6 @@ ensure_dir ~/.config/yarn/global
 
 stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
-# spicetify
-
-if [ ! "$skip_apps" ]; then
-if ! is_dir ~/.config/spicetify; then
-    log 'spicetify-cli setup'
-    spicetify
-    spicetify backup enable-devtool
-fi
-fi
-
-if [ ! "$skip_apps" ]; then
-if ! is_dir ~/.config/spicetify/Themes/spotify-redesign; then
-    log 'Clone spotify-redesign'
-    cd  ~/.config/spicetify/Themes
-    git clone https://github.com/yutakobayashidev/spotify-redesign.git
-
-    spicetify config current_theme spotify-redesign
-    spicetify apply
-fi
-fi
-
 # JQuake
 
 if [ "${arch_name}" = "arm64" ]; then
@@ -157,6 +136,11 @@ fi
 notion-enhancer apply
 
 gem install clocale colorls 1>/dev/null
+
+
+# Done
+killall cfprefsd
+killall Dock
 
 log 'All settings are complete!'
 neofetch

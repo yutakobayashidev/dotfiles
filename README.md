@@ -14,14 +14,13 @@ dotfiles for macOS & Linux
 curl -o - https://raw.githubusercontent.com/yutakobayashidev/dotfiles/main/packages/cli/scripts/dotfiles | sh
 ```
 
-3. Restart OS 
-
-
 ## Manual operations
 
-### IME
+### Preferences
 
 1. add google-japanese-ime to input sources
+
+2. Set up Touch ID so that you can unlock sudo with your fingerprint.
 
 ### Yabai and skhd ( macOS Only )
 

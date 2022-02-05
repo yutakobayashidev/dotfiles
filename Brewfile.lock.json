@@ -1494,6 +1494,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "font-hack-nerd-font": {
+        "version": "2.1.0",
+        "options": {
+          "full_name": "font-hack-nerd-font",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
@@ -1517,7 +1526,7 @@
       "monterey": {
         "HOMEBREW_VERSION": "3.3.13-54-g82550ed",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "426f229c2c62ab9374f87ee7a35cea9c26158bc6",
+        "Homebrew/homebrew-core": "12acdcd092b50a001f95622a520990eb664ba5cf",
         "CLT": "13.2.0.0.1.1638488800",
         "Xcode": "13.2.1",
         "macOS": "12.2"

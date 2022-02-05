@@ -1,7 +1,6 @@
 tap "ethereum/ethereum"
 tap "qmk/qmk"
 tap 'shopify/shopify'
-tap 'khanhas/tap'
 
 brew "asdf"
 brew "neofetch"
@@ -21,9 +20,10 @@ brew "watchman"
 brew "cocoapods"
 brew "ffmpeg"
 brew "shpotify"
-brew "spicetify-cli"
+brew "khanhas/tap/spicetify-cli"
 brew "ethereum"
 brew "yt-dlp"
+brew "tmux"
 brew "qmk"
 brew "zsh"
 brew "zsh-autosuggestions"
@@ -108,5 +108,6 @@ if OS.mac? # mac only
 
     # Fonts
     cask "font-fira-code-nerd-font"
+    cask "font-hack-nerd-font"
     cask "font-mplus"
 end

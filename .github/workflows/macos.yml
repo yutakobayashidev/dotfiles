@@ -35,3 +35,5 @@ jobs:
       uses: sarisia/actions-status-discord@v1
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        username: GitHub Actions
+        avatar_url: ${{ secrets.AVATAR_URL }}
