@@ -68,4 +68,6 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool "false"
 
 # DNS
 
-networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
+if [[ -z $CI ]]; then
+  networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
+fi

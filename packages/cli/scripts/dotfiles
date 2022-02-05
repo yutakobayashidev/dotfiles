@@ -71,6 +71,7 @@ fi
 
 log 'Link dotfiles'
 ensure_dir ~/.config/yarn/global
+ensure_dir ~/.config/gh
 
 stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
