@@ -25,15 +25,16 @@ jobs:
     - name: Run dotfiles
       run: ${GITHUB_WORKSPACE}/packages/cli/scripts/dotfiles
 
-    - name: Load .zshrc
-      run: |
-        zsh ~/packages/terminal/.zshrc 2> error.log; cat error.log
-        if [ -s error.log ]; then false; fi
+   #  - name: Load .zshrc
+   #    run: |
+   #     zsh ~/packages/terminal/.zshrc 2> error.log; cat error.log
+   #     if [ -s error.log ]; then false; fi
     
     - name: post status to Discord
       if: always()
       uses: sarisia/actions-status-discord@v1
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        description: "Checking the quality of dotfiles"
         username: GitHub Actions
         avatar_url: ${{ secrets.AVATAR_URL }}

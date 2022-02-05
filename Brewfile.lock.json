@@ -1002,7 +1002,7 @@
     },
     "tap": {
       "homebrew/cask": {
-        "revision": "751be8e8eea5c7ac6177edb47f41ba6a75ebd90d"
+        "revision": "961405512c8d7f60901d22a2e5bdcaee91a153e6"
       },
       "homebrew/cask-fonts": {
         "revision": "516f245097f4eff13ccd584e4488c02ac381545d"
@@ -1184,7 +1184,7 @@
         }
       },
       "android-studio": {
-        "version": "2021.1.1.20",
+        "version": "2021.1.1.21",
         "options": {
           "full_name": "android-studio",
           "args": {
@@ -1574,7 +1574,7 @@
       "monterey": {
         "HOMEBREW_VERSION": "3.3.13-54-g82550ed",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "68de9f5e5ccc006c359ecf722cae68ae8ae8b720",
+        "Homebrew/homebrew-core": "ab50ea5018e234968d00634f1030c81ccc091317",
         "CLT": "13.2.0.0.1.1638488800",
         "Xcode": "13.2.1",
         "macOS": "12.2"
