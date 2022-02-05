@@ -7,7 +7,8 @@ eval "$(gh completion -s zsh)"
 
 # alias
 
-alias ll='ls -l'
+alias ls="colorls"
+alias ll='colorls -l'
 alias lscmd="ls ~/scripts"
 alias code="open -a 'Visual Studio Code'"
 alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
@@ -33,8 +34,12 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export PATH=$PATH:$(yarn global bin)
 
-source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+# source
+
+. $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 # terminal
 

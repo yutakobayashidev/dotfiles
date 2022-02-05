@@ -3,17 +3,14 @@ tap "qmk/qmk"
 tap 'shopify/shopify'
 tap 'khanhas/tap'
 
+brew "asdf"
 brew "neofetch"
 brew "wget"
 brew "stow"
 brew "jq"
 brew "ghq"
 brew "peco"
-brew "asdf"
 brew "coreutils"
-brew "zsh-autosuggestions"
-brew "zsh-syntax-highlighting"
-brew "zplug"
 brew "curl"
 brew "git"
 brew "gh"
@@ -28,6 +25,10 @@ brew "spicetify-cli"
 brew "ethereum"
 brew "yt-dlp"
 brew "qmk"
+brew "zsh"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "zplug"
 
 if OS.mac? # mac only
     # taps
@@ -68,7 +69,7 @@ if OS.mac? # mac only
     cask "adoptopenjdk/openjdk/adoptopenjdk8"
     cask "bluestacks" if system '[ "$(uname -m)" = "x86_64" ]'
     cask "virtualbox" if system '[ "$(uname -m)" = "x86_64" ]'
-    cask "alacritty"
+    cask "iterm2"
     cask "tableplus"
     cask "wireshark"
     cask "nordvpn"
@@ -95,6 +96,7 @@ if OS.mac? # mac only
     cask "minecraft"
     cask "adobe-creative-cloud"
     cask "ogdesign-eagle"
+    cask "local"
     cask "figma"
     cask "miro"
     cask "notion"
