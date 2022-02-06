@@ -103,6 +103,7 @@ if OS.mac? # mac only
     
     if ENV.fetch('CI', 'false') == 'false'
         mas "Xcode", id: 497799835 
+        mas "TestFlight", id: 899247664 
         mas "Runcat", id: 1429033973     
       end
 

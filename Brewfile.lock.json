@@ -1002,10 +1002,10 @@
     },
     "tap": {
       "homebrew/cask": {
-        "revision": "7bbc63650fe97ac99a5067f630176fa24ecfe1ee"
+        "revision": "76868703b1717b129e8aedc1dff9064055229429"
       },
       "homebrew/cask-fonts": {
-        "revision": "516f245097f4eff13ccd584e4488c02ac381545d"
+        "revision": "33bc123b7b3e8e5a8365f5b02027f6649af19de3"
       },
       "koekeishiya/formulae": {
         "revision": "50f8b3528d5f66b9ec3a163bcd0fb9cc6a74e5c1"
@@ -1014,7 +1014,7 @@
         "revision": "2597e36b2d47d8f073dbb2a2122bd412cffb89d2"
       },
       "homebrew/cask-drivers": {
-        "revision": "8ac84b1c644ab789a9e170bc836253fc9723c2e2"
+        "revision": "bf23a8f4ea74758a493b63a733beb9a2f58ef94e"
       },
       "qmk/qmk": {
         "revision": "442f094d61815563a6a38688cc2d15b600f08f4e"
@@ -1566,6 +1566,10 @@
       "MeetingBar": {
         "id": "1532419400",
         "version": "3.10.1"
+      },
+      "TestFlight": {
+        "id": "899247664",
+        "version": "3.2.1"
       }
     }
   },
@@ -1574,7 +1578,7 @@
       "monterey": {
         "HOMEBREW_VERSION": "3.3.13-54-g82550ed",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "1bf6b6feac854388d4cc7814b20051a1b9e18bc4",
+        "Homebrew/homebrew-core": "ee0ad7e47139635e245582c9ee49a90dcdda00d6",
         "CLT": "13.2.0.0.1.1638488800",
         "Xcode": "13.2.1",
         "macOS": "12.2"
