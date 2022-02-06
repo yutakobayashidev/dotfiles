@@ -138,6 +138,15 @@ notion-enhancer apply
 
 gem install clocale colorls 1>/dev/null
 
+# clone zenn-content
+
+if ! is_dir "$GIT_CLONE_PATH"/zenn-content; then
+    log 'Clone zenn-content'
+    cd "$GIT_CLONE_PATH"
+    git clone https://github.com/yutakobayashidev/zenn-content.git
+    cd "$GIT_CLONE_PATH/zenn-content"
+    npm install
+fi
 
 # Done
 
