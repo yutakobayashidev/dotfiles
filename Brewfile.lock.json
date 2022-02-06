@@ -1091,11 +1091,29 @@
             }
           }
         }
+      },
+      "zsh-completions": {
+        "version": "0.33.0_1",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "all": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/zsh-completions/blobs/sha256:eab228532a15b1c8eddfd38f46306cf723e6f331d38c8874d0305d6fe888ab70",
+              "sha256": "eab228532a15b1c8eddfd38f46306cf723e6f331d38c8874d0305d6fe888ab70"
+            }
+          }
+        }
+      },
+      "heroku/brew/heroku": {
+        "version": "7.59.2",
+        "bottle": false
       }
     },
     "tap": {
       "homebrew/cask": {
-        "revision": "add0628f093ff6f01e04f3dd6dad263d242705d3"
+        "revision": "e3b4bf7e3d5d736743fa824f0bb01cec42da4ccf"
       },
       "homebrew/cask-fonts": {
         "revision": "33bc123b7b3e8e5a8365f5b02027f6649af19de3"
