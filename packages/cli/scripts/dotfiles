@@ -86,8 +86,6 @@ fi
 if [ "$(uname)" = "Darwin" ]; then
     ensure_dir ~/Pictures/screenshots/
     ~/scripts/macos-defaults
-else
-  echo "📌 $(uname) does not support macos-defaults, so skip it..."
 fi
 
 # asdf
@@ -119,6 +117,7 @@ for plugin in $(asdf plugin list); do
     fi
 done
 
+if [ "$(uname)" = "Darwin" ]; then
 limelight_path=/usr/local/bin/limelight
 if ! is_file "$limelight_path"; then
     git clone https://github.com/koekeishiya/limelight
@@ -127,6 +126,7 @@ if ! is_file "$limelight_path"; then
     mv ./bin/limelight /usr/local/bin/limelight
     cd ../
     rm -rf limelight
+fi
 fi
 
 echo 📦 yarn global
@@ -140,8 +140,11 @@ gem install clocale colorls 1>/dev/null
 
 
 # Done
-killall cfprefsd
-killall Dock
+
+if [ "$(uname)" = "Darwin" ]; then
+    killall cfprefsd
+    killall Dock
+fi
 
 log 'All settings are complete!'
 neofetch
