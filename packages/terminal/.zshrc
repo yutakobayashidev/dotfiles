@@ -1,4 +1,5 @@
 export PATH=$PATH:$HOME/scripts
+export PATH="$PATH:/opt/homebrew/bin/"
 
 eval "$(starship init zsh)"
 eval "$(gh completion -s zsh)"
@@ -22,6 +23,8 @@ alias gitrm='rm -rf .git'
 alias ghw='gh repo view -w $(ghq list | peco)'
 alias vs='code $(ghq list -p | peco)'
 alias pr='gh pr view --web'
+alias ze="yarn zenn"
+alias zep="yarn zenn preview"
 
 # export
 
