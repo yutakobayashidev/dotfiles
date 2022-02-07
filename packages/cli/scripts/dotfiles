@@ -88,6 +88,15 @@ if [ "$(uname)" = "Darwin" ]; then
     ~/scripts/macos-defaults
 fi
 
+# vscode
+
+# install extention
+cd "$STOW_PACKAGES_PATH/editor/Library/Application Support/Code/User"
+cat extensions | while read line
+do
+ code --install-extension $line
+done
+
 # asdf
 
 for plugin in $(awk '{print $1}' ~/.tool-versions); do

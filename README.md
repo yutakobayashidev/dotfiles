@@ -32,10 +32,6 @@ brew services start --all
 
 2. Then allow accessibility permissions on Security & Privacy inside System Preferences.app
 
-### Visual Studio Code 
-
-1. Login and sync with your Github account. 
-
 ## Inspired
 
 - [JunichiSugiura/dotfiles: 💻 macOS dotfiles managed with GNU stow + Homebrew Bundle](https://github.com/JunichiSugiura/dotfiles)
