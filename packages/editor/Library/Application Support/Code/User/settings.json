@@ -26,7 +26,6 @@
     "[javascriptreact]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "explorer.compactFolders": false,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "workbench.colorTheme": "Dracula",
@@ -34,4 +33,8 @@
     "security.workspace.trust.enabled": false,
     "editor.inlineSuggest.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
+    "files.exclude": {
+        "**/.DS_Store": false,
+        "**/.git": false
+    },
 }
