@@ -137,6 +137,7 @@ fi
 notion-enhancer apply
 
 gem install clocale colorls 1>/dev/null
+gem install t 1>/dev/null
 
 # clone zenn-content
 
