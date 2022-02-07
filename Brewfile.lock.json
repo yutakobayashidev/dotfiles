@@ -415,45 +415,40 @@
         }
       },
       "cocoapods": {
-        "version": "1.11.2_1",
+        "version": "1.11.2_2",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
           "files": {
             "arm64_monterey": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:fa607ac25dd409d479125d25a2fcd97aad4e7ab5759b9dfa24c90b6d461bf801",
-              "sha256": "fa607ac25dd409d479125d25a2fcd97aad4e7ab5759b9dfa24c90b6d461bf801"
+              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:001989d76642dcce6db769abfc15d637a7f3cc45bda2fc982de474494fc8cc31",
+              "sha256": "001989d76642dcce6db769abfc15d637a7f3cc45bda2fc982de474494fc8cc31"
             },
             "arm64_big_sur": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:d792e6ff2dbbc51e436000addd1bcf86edb34feb4b53194e64f6889d48527ee0",
-              "sha256": "d792e6ff2dbbc51e436000addd1bcf86edb34feb4b53194e64f6889d48527ee0"
+              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:d6da560b3cbe34caf25925616ee48c11bf3ceb3b7f7773859862d5c3785876c8",
+              "sha256": "d6da560b3cbe34caf25925616ee48c11bf3ceb3b7f7773859862d5c3785876c8"
             },
             "monterey": {
               "cellar": "/usr/local/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:4eb89ca73f311a1e0c52a0b72d2215b4c0201588156faf8fada8b9d595d22aa2",
-              "sha256": "4eb89ca73f311a1e0c52a0b72d2215b4c0201588156faf8fada8b9d595d22aa2"
+              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:5723991d3a4780ee8d9469742267a6bb0c96862498044f5ba0ffc69a23b81393",
+              "sha256": "5723991d3a4780ee8d9469742267a6bb0c96862498044f5ba0ffc69a23b81393"
             },
             "big_sur": {
               "cellar": "/usr/local/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:a62461a2f591e9a765801d02ea83e0977782839e68a1886920a0928423683501",
-              "sha256": "a62461a2f591e9a765801d02ea83e0977782839e68a1886920a0928423683501"
+              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:69e1b8d58e10aba88e7ef86c7334dfcea72801c080c84fc0172d14c0ac47255f",
+              "sha256": "69e1b8d58e10aba88e7ef86c7334dfcea72801c080c84fc0172d14c0ac47255f"
             },
             "catalina": {
               "cellar": "/usr/local/Cellar",
-              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:560c574cd0a9ae0958ae32ad136476982552186d6d500ac1167d43eff72d2007",
-              "sha256": "560c574cd0a9ae0958ae32ad136476982552186d6d500ac1167d43eff72d2007"
-            },
-            "mojave": {
-              "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:f24d3cde3c06c8fd3806979d2c34c9edd8ad67e014c8f3aee69a487ccb1058c8",
-              "sha256": "f24d3cde3c06c8fd3806979d2c34c9edd8ad67e014c8f3aee69a487ccb1058c8"
+              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:deaa62a6366d2d1aadc10d5159fcf5e59146c1f156db6fa49059a457731c402f",
+              "sha256": "deaa62a6366d2d1aadc10d5159fcf5e59146c1f156db6fa49059a457731c402f"
             },
             "x86_64_linux": {
               "cellar": ":any_skip_relocation",
-              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:d808399f02cb62f443bde184a986bcda9d52d2e48cbddb396008666f7e1f0d1c",
-              "sha256": "d808399f02cb62f443bde184a986bcda9d52d2e48cbddb396008666f7e1f0d1c"
+              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:ed8e5eeb99f91b86083c5e5201e300da729075e8736dc28fcf771a9836054acc",
+              "sha256": "ed8e5eeb99f91b86083c5e5201e300da729075e8736dc28fcf771a9836054acc"
             }
           }
         }
@@ -1104,11 +1099,13 @@
       "heroku/brew/heroku": {
         "version": "7.59.2",
         "bottle": false
+      },
+      "fossas/tap/fossa": {
       }
     },
     "tap": {
       "homebrew/cask": {
-        "revision": "26eed9a4204c04aff105bae7caa5233674d09941"
+        "revision": "a4413eca982496516ddf9e6fd208a2d473697aff"
       },
       "homebrew/cask-fonts": {
         "revision": "33bc123b7b3e8e5a8365f5b02027f6649af19de3"
@@ -1691,9 +1688,9 @@
   "system": {
     "macos": {
       "monterey": {
-        "HOMEBREW_VERSION": "3.3.13-56-g789aa82",
+        "HOMEBREW_VERSION": "3.3.14",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "1d049bf607e9e00e00a767791c9190d16b705e0b",
+        "Homebrew/homebrew-core": "ddddcd61d9ad17f26c9706540be2369593207f3c",
         "CLT": "13.2.0.0.1.1638488800",
         "Xcode": "13.2.1",
         "macOS": "12.2"
