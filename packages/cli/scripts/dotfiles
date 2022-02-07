@@ -61,7 +61,7 @@ ensure_dir "$GIT_CLONE_PATH"
 if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
     log 'Clone dotfiles'
     cd "$GIT_CLONE_PATH"
-    git clone https://github.com/yutakobayashidev/dotfiles.git
+    git clone https://github.com/"$YOR_GITHUB_USERNAME"/dotfiles.git
 fi
 
 if [ ! "$skip_apps" ]; then
@@ -168,7 +168,7 @@ gem install t 1>/dev/null
 if ! is_dir "$GIT_CLONE_PATH"/zenn-content; then
     log 'Clone zenn-content'
     cd "$GIT_CLONE_PATH"
-    git clone https://github.com/yutakobayashidev/zenn-content.git
+    git clone https://github.com/"$YOR_GITHUB_USERNAME"/zenn-content.git
     cd "$GIT_CLONE_PATH/zenn-content"
     yarn install
 fi
