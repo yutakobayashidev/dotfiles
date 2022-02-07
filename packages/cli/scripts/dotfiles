@@ -88,9 +88,24 @@ if [ "$(uname)" = "Darwin" ]; then
     ~/scripts/macos-defaults
 fi
 
+# nvim
+
+plug_path=~/.local/share/nvim/site/autoload/plug.vim
+if ! is_file "$plug_path"; then
+    log 'Setup vim-plug"'
+    sh -c "curl -fLo $plug_path --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+fi
+
+plugged_path=~/.local/share/nvim/autoload/plugged
+if ! is_dir "$plugged_path"; then
+    log 'Install Neovim Plugins'
+    nvim +PlugInstall +qall
+fi
+
 # vscode
 
-# install extention
+## install extention
+
 cd "$STOW_PACKAGES_PATH/editor/Library/Application Support/Code/User"
 cat extensions | while read line
 do

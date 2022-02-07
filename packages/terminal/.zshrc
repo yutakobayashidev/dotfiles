@@ -12,6 +12,7 @@ alias ll='colorls -l'
 alias lscmd="ls ~/scripts"
 alias code="open -a 'Visual Studio Code'"
 alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
+alias vi="nvim"
 alias y='yarn'
 alias yi='yarn install'
 alias ya='yarn add'
