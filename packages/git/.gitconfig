@@ -10,7 +10,7 @@ path = ~/Dropbox/dotfiles/.gitconfig.local
 	process = git-lfs filter-process
 	required = true
 [ghq]
-  root = ~/projects/github.com/yutakobayashidev
+  root = ~/projects/github.com
 [commit]
 	gpgsign = true
 	template = /Users/yutakobayashi/.commit_template

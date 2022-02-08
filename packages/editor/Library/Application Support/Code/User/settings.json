@@ -4,6 +4,7 @@
   "eslint.format.enable": false,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.singleQuote": true,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -24,5 +25,6 @@
   "files.exclude": {
     "**/.DS_Store": false,
     "**/.git": false
-  }
+  },
+  "prettier.jsxSingleQuote": true
 }
