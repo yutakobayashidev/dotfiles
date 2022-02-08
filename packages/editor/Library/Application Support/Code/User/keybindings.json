@@ -1,3 +1,19 @@
 // Place your key bindings in this file to override the defaults
 [
+  {
+    "key": "shift+cmd+a",
+    "command": "editor.emmet.action.balanceIn"
+  },
+  {
+    "key": "alt+cmd+a",
+    "command": "editor.emmet.action.balanceOut"
+  },
+  {
+    "key": "shift+enter",
+    "command": "type",
+    "args": {
+      "text": "<br />"
+    },
+    "when": "editorTextFocus && editorLangId == 'html'"
+  }
 ]
