@@ -1,40 +1,28 @@
 {
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.editor.untitled.hint": "hidden",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "security.workspace.trust.untrustedFiles": "open",
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[css]": {
-        "editor.defaultFormatter": "aeschli.vscode-css-formatter"
-    },
-    "[php]": {
-        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
-    "workbench.colorTheme": "Dracula",
-    "editor.fontFamily": "Fira Code,Menlo, Monaco, 'Courier New', monospace",
-    "security.workspace.trust.enabled": false,
-    "editor.inlineSuggest.enabled": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "files.exclude": {
-        "**/.DS_Store": false,
-        "**/.git": false
-    },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.untitled.hint": "hidden",
+  "eslint.format.enable": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "workbench.colorTheme": "Dracula",
+  "editor.fontFamily": "Fira Code,Menlo, Monaco, 'Courier New', monospace",
+  "security.workspace.trust.enabled": false,
+  "editor.inlineSuggest.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.exclude": {
+    "**/.DS_Store": false,
+    "**/.git": false
+  }
 }
