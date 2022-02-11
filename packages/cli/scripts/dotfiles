@@ -70,6 +70,7 @@ brew bundle -v --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
 fi
 
 log 'Link dotfiles'
+ensure_dir ~/.bookmarks
 ensure_dir ~/.config/yarn/global
 ensure_dir ~/.config/gh
 

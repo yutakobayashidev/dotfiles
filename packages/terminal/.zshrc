@@ -52,6 +52,32 @@ if type brew &>/dev/null; then
   autoload -Uz compinit && compinit
 fi
 
+# bookmarks
+# https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
+
+
+if [ -d "$HOME/.bookmarks" ]; then
+    export CDPATH=".:$HOME/.bookmarks:"
+    alias goto="cd -P"
+fi
+
+function bookmark {
+    local current_dir=$(pwd)
+    ln -s $current_dir ~/.bookmarks/@$(basename $current_dir)
+}
+
+# https://qiita.com/sfuta/items/a72f7bd194a61353c9fe
+
+# hook関数precmd実行
+__call_precmds() {
+  type precmd > /dev/null 2>&1 && precmd
+  for __pre_func in $precmd_functions; do $__pre_func; done
+}
+
+#shift+upで親ディレクトリへ
+__cd_up()   { builtin cd ..; echo "\r\n"; __call_precmds; zle reset-prompt }
+zle -N __cd_up;   bindkey '^[[1;2A' __cd_up
+
 # terminal
 
 echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
