@@ -154,8 +154,8 @@ if ! is_file "$limelight_path"; then
 fi
 fi
 
-echo 📦 yarn global
 if ! is_dir ~/.config/yarn/global/node_modules; then
+    echo 📦 yarn global install
     log 'Setup Yarn global'
     yarn global add
     notion-enhancer apply
