@@ -158,8 +158,8 @@ echo 📦 yarn global
 if ! is_dir ~/.config/yarn/global/node_modules; then
     log 'Setup Yarn global'
     yarn global add
+    notion-enhancer apply
 fi
-notion-enhancer apply
 
 gem install clocale colorls 1>/dev/null
 gem install t 1>/dev/null
