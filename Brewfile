@@ -99,6 +99,7 @@ if OS.mac? # mac only
     cask "pushplaylabs-sidekick"
     cask "pycharm"
     cask "qmk-toolbox"
+    cask "raspberry-pi-imager"
     cask "slack"
     cask "signal"
     cask "spotify"

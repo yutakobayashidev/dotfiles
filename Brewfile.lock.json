@@ -1214,10 +1214,10 @@
     },
     "tap": {
       "homebrew/cask": {
-        "revision": "6175cafa650eb0a8549525ced17f2b8a0fae398a"
+        "revision": "adbda43e0bb312873b2337d75b99bdc7ffca96d1"
       },
       "homebrew/cask-fonts": {
-        "revision": "9d5657ddcd15a375e43e272de49160c101f5ecc6"
+        "revision": "ce4a0d3ae290227d064b83585ad0769f6ddb1cd0"
       },
       "koekeishiya/formulae": {
         "revision": "50f8b3528d5f66b9ec3a163bcd0fb9cc6a74e5c1"
@@ -1226,7 +1226,7 @@
         "revision": "2597e36b2d47d8f073dbb2a2122bd412cffb89d2"
       },
       "homebrew/cask-drivers": {
-        "revision": "560de2e5eb40d79bed7c5fe3e3f8878a9ce31101"
+        "revision": "88a656ca49d5296adca43ad55beb950b4e33f77d"
       },
       "qmk/qmk": {
         "revision": "442f094d61815563a6a38688cc2d15b600f08f4e"
@@ -1790,6 +1790,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "raspberry-pi-imager": {
+        "version": "1.7.1",
+        "options": {
+          "full_name": "raspberry-pi-imager",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
@@ -1817,7 +1826,7 @@
       "monterey": {
         "HOMEBREW_VERSION": "3.3.14-60-g9263d95",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "f16b7eb762a1f052c11ebba242a21543fe54db1c",
+        "Homebrew/homebrew-core": "8fe8f8542fe9c82afc4cac54e552489005bcd019",
         "CLT": "13.2.0.0.1.1638488800",
         "Xcode": "13.2.1",
         "macOS": "12.2"
