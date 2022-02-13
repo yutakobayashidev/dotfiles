@@ -8,6 +8,7 @@ brew "cocoapods"
 brew "coreutils"
 brew "curl"
 brew "ethereum"
+brew "fzf"
 brew "ffmpeg"
 brew "fossas/tap/fossa"
 brew "git"
@@ -63,7 +64,7 @@ if OS.mac? # mac only
     cask "bluestacks" if system '[ "$(uname -m)" = "x86_64" ]'
     cask "blender" 
     cask "blockbench"
-    cask "betterdiscord-installer"
+    cask "betterdiscord-installer" if File.exist?("~/Library/Application Support/BetterDiscord")
     cask "cleanmymac"
     cask "clip-studio-paint"
     cask "dropbox"
@@ -115,7 +116,7 @@ if OS.mac? # mac only
         mas "Xcode", id: 497799835 
         mas "TestFlight", id: 899247664 
         mas "Runcat", id: 1429033973     
-      end
+    end
 
     # Fonts
     cask "font-fira-code-nerd-font"
