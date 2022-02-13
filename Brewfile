@@ -64,7 +64,7 @@ if OS.mac? # mac only
     cask "bluestacks" if system '[ "$(uname -m)" = "x86_64" ]'
     cask "blender" 
     cask "blockbench"
-    cask "betterdiscord-installer" if File.exist?("~/Library/Application Support/BetterDiscord")
+    cask "betterdiscord-installer" if !Dir.exist?(File.expand_path('~/Library/Application Support/BetterDiscord'))
     cask "cleanmymac"
     cask "clip-studio-paint"
     cask "dropbox"
