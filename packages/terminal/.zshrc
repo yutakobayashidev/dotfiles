@@ -1,5 +1,6 @@
 export PATH=$PATH:$HOME/scripts
 export PATH="$PATH:/opt/homebrew/bin/"
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 
 eval "$(starship init zsh)"
 eval "$(gh completion -s zsh)"
@@ -44,13 +45,26 @@ export PATH=$PATH:$(yarn global bin)
 . $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+source $ZPLUG_HOME/init.zsh
 
-# plugin
+# plugins
+
+zplug "marzocchi/zsh-notify"
+zplug "b4b4r07/enhancd", use:"init.sh"
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
   autoload -Uz compinit && compinit
 fi
+
+if ! zplug check --verbose; then
+  printf 'Install? [y/N]: '
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
+zplug load
 
 # bookmarks
 # https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
@@ -66,6 +80,23 @@ function bookmark {
     ln -s $current_dir ~/.bookmarks/@$(basename $current_dir)
 }
 
+# fbr - checkout git branch
+fbr() {
+  local branches branch
+  branches=$(git branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+function mkcd() {
+      if [[ -d $1 ]]; then
+          echo "$1 already exists!"
+          cd $1
+      else
+          mkdir -p $1 && cd $1
+      fi
+}
+
 # https://qiita.com/sfuta/items/a72f7bd194a61353c9fe
 
 # hook関数precmd実行
@@ -73,6 +104,7 @@ __call_precmds() {
   type precmd > /dev/null 2>&1 && precmd
   for __pre_func in $precmd_functions; do $__pre_func; done
 }
+
 
 #shift+upで親ディレクトリへ
 __cd_up()   { builtin cd ..; echo "\r\n"; __call_precmds; zle reset-prompt }

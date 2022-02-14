@@ -7,7 +7,7 @@ truncate_to_repo = false
 # テキストが入力される場所の横に文字
 
 [character]
-success_symbol = "🦄"
+success_symbol = "💭"
 error_symbol = "☔️"
 
 # モジュールを無効化

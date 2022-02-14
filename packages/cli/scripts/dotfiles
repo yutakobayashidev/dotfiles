@@ -107,11 +107,13 @@ fi
 
 ## install extention
 
+if [ ! "$skip_apps" ]; then
 cd "$STOW_PACKAGES_PATH/editor/Library/Application Support/Code/User"
 cat extensions | while read line
 do
  code --install-extension $line
 done
+fi
 
 # asdf
 
