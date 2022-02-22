@@ -48,7 +48,7 @@ if OS.mac? # mac only
     cask_args appdir: "/Applications"
 
     brew "mas"
-    brew "yabai"
+    brew "koekeishiya/formulae/yabai"
     brew "skhd"
 
     # Applications
@@ -64,6 +64,7 @@ if OS.mac? # mac only
     cask "bluestacks" if system '[ "$(uname -m)" = "x86_64" ]'
     cask "blender" 
     cask "blockbench"
+    cask "bricklink-studio"
     cask "betterdiscord-installer" if !Dir.exist?(File.expand_path('~/Library/Application Support/BetterDiscord'))
     cask "cleanmymac"
     cask "clip-studio-paint"
@@ -74,6 +75,7 @@ if OS.mac? # mac only
     cask "elgato-stream-deck"
     cask "epic-games"
     cask "fl-studio"
+    cask "fig"
     cask "figma"
     cask "google-japanese-ime"
     cask "google-cloud-sdk"
