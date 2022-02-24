@@ -14,6 +14,7 @@ alias ll='colorls -l'
 alias lscmd="ls ~/scripts"
 alias code="open -a 'Visual Studio Code'"
 alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
+alias mccmd='java -jar -Xms4G -Xmx4G' 
 alias vi="nvim"
 alias y='yarn'
 alias yi='yarn install'
@@ -36,10 +37,21 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH="/opt/homebrew/sbin:$PATH"
 
 export PATH=$PATH:$(yarn global bin)
 
 # source
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
 
 . $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 . $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -104,7 +116,6 @@ __call_precmds() {
   type precmd > /dev/null 2>&1 && precmd
   for __pre_func in $precmd_functions; do $__pre_func; done
 }
-
 
 #shift+upで親ディレクトリへ
 __cd_up()   { builtin cd ..; echo "\r\n"; __call_precmds; zle reset-prompt }

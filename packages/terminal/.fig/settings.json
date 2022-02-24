@@ -1,0 +1,7 @@
+{
+  "app.disableAutolaunch" : true,
+  "app.hideMenubarIcon" : true,
+  "autocomplete.disable" : false,
+  "autocomplete.theme" : "dark",
+  "dotfiles.beta" : false
+}
