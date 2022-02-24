@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "gatsby-cli": "^4.8.0",
-    "generator-code": "^1.6.7",
+    "generator-code": "^1.6.8",
     "notion-enhancer": "^0.11.0",
     "vsce": "^2.6.7",
     "yo": "^4.3.0"
