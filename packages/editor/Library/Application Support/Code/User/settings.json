@@ -26,5 +26,9 @@
     "**/.DS_Store": false,
     "**/.git": false
   },
-  "prettier.jsxSingleQuote": true
+  "prettier.jsxSingleQuote": true,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.accessibilitySupport": "on"
 }
