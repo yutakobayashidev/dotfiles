@@ -2,6 +2,7 @@
 path = ~/Dropbox/dotfiles/.gitconfig.local
 [core]
 	precomposeUnicode = true
+	excludesfile = ~/.gitignore_global
 [init]
 	defaultBranch = main
 [filter "lfs"]
@@ -9,10 +10,10 @@ path = ~/Dropbox/dotfiles/.gitconfig.local
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[ghq]
-  root = ~/projects/github.com
 [commit]
 	gpgsign = true
-	template = /Users/yutakobayashi/.commit_template
+	template = ~/.commit_template
 [gpg]
 	program = gpg
+[ghq]
+  root = ~/projects/github.com
