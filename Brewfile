@@ -71,6 +71,7 @@ if OS.mac? # mac only
     cask "betterdiscord-installer" if !Dir.exist?(File.expand_path('~/Library/Application Support/BetterDiscord'))
     cask "cleanmymac"
     cask "clip-studio-paint"
+    cask "cinebench"
     cask "dropbox"
     cask "discord"
     cask "docker"
@@ -92,6 +93,7 @@ if OS.mac? # mac only
     cask "kindle"
     cask "local"
     cask "multi"
+    cask "minecraftpe"
     cask "MeetingBar"
     cask "musescore"
     cask "minecraft"
