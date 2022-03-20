@@ -6,6 +6,8 @@ alt + shift - e : open /Applications/Eagle.app
 alt + shift - s : open /Applications/Signal.app
 alt + shift - d : open /Applications/Discord.app
 
+alt - f : yabai -m space --layout float
+
 # close
 alt - c : yabai -m window --close
 
@@ -15,3 +17,8 @@ shift + alt - m : yabai -m space --toggle mission-control
 # mirror
 alt - m : yabai -m space --mirror y-axis \
     && yabai -m window --focus first
+
+alt - r : yabai -m space --rotate 270
+
+# full screen
+alt - space : yabai -m window --toggle zoom-fullscreen

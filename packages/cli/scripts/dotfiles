@@ -74,6 +74,7 @@ ensure_dir ~/.bookmarks
 ensure_dir ~/.config/yarn/global
 ensure_dir ~/.config/gh
 
+find . -name '.DS_Store' -type f -ls -delete
 stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
 # JQuake
