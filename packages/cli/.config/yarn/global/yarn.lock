@@ -2565,10 +2565,10 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-generator-code@^1.6.8:
-  version "1.6.8"
-  resolved "https://registry.yarnpkg.com/generator-code/-/generator-code-1.6.8.tgz#cf32a0eb206156dd7660ca463fcdb44b1dad7348"
-  integrity sha512-0VMjRsX2HVhDboVUJIZ2N6ig7f/KG69V1AlTGIMUcxQzeLtjAFtxSdFQ2Z+hjmsu4Wjl6RjPj6NczIu3eSZ6mQ==
+generator-code@^1.6.9:
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/generator-code/-/generator-code-1.6.9.tgz#71fe49e56bc98089e9535892924e96a606f815af"
+  integrity sha512-e+mFv1JS6MyY1Rlez4pUhnRPxxylyDztSbTAJJ57hg4jkuASOZw8LP9b7PQCjrtCsXSSjqFSoqXSkomg3duWIQ==
   dependencies:
     chalk "^4.1.2"
     fast-plist "^0.1.2"
