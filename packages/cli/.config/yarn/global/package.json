@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "gatsby-cli": "^4.11.1",
+    "gatsby-cli": "^4.15.1",
     "generator-code": "^1.6.9",
     "notion-enhancer": "^0.11.0",
     "vsce": "^2.7.0",
