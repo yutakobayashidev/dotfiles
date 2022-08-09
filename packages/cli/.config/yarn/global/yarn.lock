@@ -2565,14 +2565,14 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-generator-code@^1.6.9:
-  version "1.6.9"
-  resolved "https://registry.yarnpkg.com/generator-code/-/generator-code-1.6.9.tgz#71fe49e56bc98089e9535892924e96a606f815af"
-  integrity sha512-e+mFv1JS6MyY1Rlez4pUhnRPxxylyDztSbTAJJ57hg4jkuASOZw8LP9b7PQCjrtCsXSSjqFSoqXSkomg3duWIQ==
+generator-code@^1.6.14:
+  version "1.6.14"
+  resolved "https://registry.yarnpkg.com/generator-code/-/generator-code-1.6.14.tgz#b1bab21ce4ff1bbe87297e45953833ee72c87f8b"
+  integrity sha512-aPSlghLWHhsKLI3weXAo+IHdtCtaXyhdjlhV+xARfFP77XHUS8tWN/NrBbp52gSWzI4GNjk5pOIL+bThfuA83Q==
   dependencies:
     chalk "^4.1.2"
     fast-plist "^0.1.2"
-    request-light "^0.5.7"
+    request-light "^0.5.8"
     sanitize-filename "^1.6.3"
     which "^2.0.2"
     yeoman-generator "^5.6.1"
@@ -5421,10 +5421,10 @@ replace-ext@^1.0.0:
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-1.0.1.tgz#2d6d996d04a15855d967443631dd5f77825b016a"
   integrity sha512-yD5BHCe7quCgBph4rMQ+0KkIRKwWCrHDOX1p1Gp6HwjPM5kVoCdKGNhN7ydqqsX6lJEnQDKZ/tFMiEdQ1dvPEw==
 
-request-light@^0.5.7:
-  version "0.5.7"
-  resolved "https://registry.yarnpkg.com/request-light/-/request-light-0.5.7.tgz#1c448c22153b55d2cd278eb414df24a5ad6e6d5e"
-  integrity sha512-i/wKzvcx7Er8tZnvqSxWuNO5ZGggu2UgZAqj/RyZ0si7lBTXL7kZiI/dWxzxnQjaY7s5HEy1qK21Do4Ncr6cVw==
+request-light@^0.5.8:
+  version "0.5.8"
+  resolved "https://registry.yarnpkg.com/request-light/-/request-light-0.5.8.tgz#8bf73a07242b9e7b601fac2fa5dc22a094abcc27"
+  integrity sha512-3Zjgh+8b5fhRJBQZoy+zbVKpAQGLyka0MPgW3zruTF4dFFJ8Fqcfu9YsAvi/rvdcaTeWG3MkbZv4WKxAn/84Lg==
 
 request@^2.88.0:
   version "2.88.2"
