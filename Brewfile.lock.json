@@ -2534,6 +2534,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "messenger": {
+        "version": "184.0.0.4.202",
+        "options": {
+          "full_name": "messenger",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
