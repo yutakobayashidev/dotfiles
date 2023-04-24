@@ -2,8 +2,7 @@
 
 set -e
 
-YOR_GITHUB_USERNAME=yutakobayashidev
-GIT_CLONE_PATH=~/projects/github.com/"$YOR_GITHUB_USERNAME"
+GIT_CLONE_PATH=~/Documents/projects
 STOW_PACKAGES_PATH="$GIT_CLONE_PATH"/dotfiles/packages
 
 for i in "$@"; do
@@ -14,11 +13,6 @@ for i in "$@"; do
         *) ;;
     esac
 done
-
-log() {
-    message=$1
-    echo 📌 "$message"
-}
 
 is_file() {
     path="$1"
@@ -42,16 +36,16 @@ uname=$(uname -a)
 
 if [ "${arch_name}" = "x86_64" ]; then
     if ! is_file /usr/local/bin/brew; then
-        log 'Setup Homebrew'
+        echo "🍺 Setup Homebrew"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     fi
 elif [ "${arch_name}" = "arm64" ]; then
     if ! is_file /opt/homebrew/bin/brew; then
-        log 'Setup Homebrew'
+        echo "🍺 Setup Homebrew"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         eval "$(/opt/homebrew/bin/brew shellenv)"
 
-        log 'Install Rosetta 2'
+        echo 'Install Rosetta 2'
         sudo softwareupdate --install-rosetta
     fi
 fi
@@ -59,20 +53,23 @@ fi
 ensure_dir "$GIT_CLONE_PATH"
 
 if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
-    log 'Clone dotfiles'
+    echo '📌 Clone dotfiles'
     cd "$GIT_CLONE_PATH"
-    git clone https://github.com/"$YOR_GITHUB_USERNAME"/dotfiles.git
+    git clone https://github.com/yutakobaayshidev/dotfiles.git
 fi
 
 if [ ! "$skip_apps" ]; then
-log 'Install Apps and CLIs'
+echo '🍺 Install Apps and CLIs'
 brew bundle -v --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
 fi
 
-log 'Link dotfiles'
-ensure_dir ~/.bookmarks
-ensure_dir ~/.config/yarn/global
+echo '🔗 Link dotfiles'
 ensure_dir ~/.config/gh
+
+VSCODE_SETTING_DIR=~/Library/Application\ Support/Code/User
+
+rm "$VSCODE_SETTING_DIR/settings.json"
+rm "$VSCODE_SETTING_DIR/keybindings.json"
 
 find . -name '.DS_Store' -type f -ls -delete
 stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
@@ -89,22 +86,6 @@ if [ "$(uname)" = "Darwin" ]; then
     ensure_dir ~/Pictures/screenshots/
     ~/scripts/macos-defaults
 fi
-
-# nvim
-
-plug_path=~/.local/share/nvim/site/autoload/plug.vim
-if ! is_file "$plug_path"; then
-    log 'Setup vim-plug"'
-    sh -c "curl -fLo $plug_path --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-fi
-
-plugged_path=~/.local/share/nvim/autoload/plugged
-if ! is_dir "$plugged_path"; then
-    log 'Install Neovim Plugins'
-    nvim +PlugInstall +qall
-fi
-
-# vscode
 
 ## install extention
 
@@ -140,42 +121,10 @@ is_runtime_versions_changed () {
 
 for plugin in $(asdf plugin list); do
     if is_runtime_versions_changed "$plugin"; then
-        log "Install runtime: $plugin"
+        echo "Install runtime: $plugin"
         asdf install "$plugin"
     fi
 done
-
-if [ "$(uname)" = "Darwin" ]; then
-limelight_path=/usr/local/bin/limelight
-if ! is_file "$limelight_path"; then
-    git clone https://github.com/koekeishiya/limelight
-    cd limelight
-    make
-    mv ./bin/limelight /usr/local/bin/limelight
-    cd ../
-    rm -rf limelight
-fi
-fi
-
-if ! is_dir ~/.config/yarn/global/node_modules; then
-    echo 📦 yarn global install
-    log 'Setup Yarn global'
-    yarn global add
-    notion-enhancer apply
-fi
-
-gem install clocale colorls 1>/dev/null
-gem install t 1>/dev/null
-
-# clone zenn-content
-
-if ! is_dir "$GIT_CLONE_PATH"/zenn-content; then
-    log 'Clone zenn-content'
-    cd "$GIT_CLONE_PATH"
-    git clone https://github.com/"$YOR_GITHUB_USERNAME"/zenn-content.git
-    cd "$GIT_CLONE_PATH/zenn-content"
-    yarn install
-fi
 
 # Done
 
@@ -184,5 +133,5 @@ if [ "$(uname)" = "Darwin" ]; then
     killall Dock
 fi
 
-log 'All settings are complete!'
+echo '🎉 All settings are complete!'
 neofetch

@@ -22,16 +22,6 @@ curl -o - https://raw.githubusercontent.com/yutakobayashidev/dotfiles/main/packa
 
 2. Set up Touch ID so that you can unlock sudo with your fingerprint.
 
-### Yabai and skhd ( macOS Only )
-
-1. Execute the following command.
-
-```sh
-brew services start --all
-```
-
-2. Then allow accessibility permissions on Security & Privacy inside System Preferences.app
-
 ## Inspired
 
 - [JunichiSugiura/dotfiles: 💻 macOS dotfiles managed with GNU stow + Homebrew Bundle](https://github.com/JunichiSugiura/dotfiles)

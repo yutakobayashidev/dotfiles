@@ -1,8 +1,9 @@
-[include]
-path = ~/Dropbox/dotfiles/.gitconfig.local
+[user]
+	email = 91340399+yutakobayashidev@users.noreply.github.com
+	name = yutakobaayshidev
 [core]
-	precomposeUnicode = true
 	excludesfile = ~/.gitignore_global
+	precomposeUnicode = true
 [init]
 	defaultBranch = main
 [filter "lfs"]
@@ -10,10 +11,5 @@ path = ~/Dropbox/dotfiles/.gitconfig.local
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[commit]
-	gpgsign = true
-	template = ~/.commit_template
-[gpg]
-	program = gpg
 [ghq]
-  root = ~/projects/github.com
+  root = ~/Documents/projects

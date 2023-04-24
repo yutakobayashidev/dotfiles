@@ -2,6 +2,10 @@
 
 echo 🔨 Configuring macOS default settings
 
+url="http://img.youtube.com/vi/I9VfWCyCagQ/maxresdefault.jpg"
+wget -O ~/Pictures/wallpaper.jpg "$url"
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/yuta/Pictures/wallpaper.jpg"'
+
 # Finder
 
 # Change the default directory name to English.
@@ -71,3 +75,4 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool "false"
 if [[ -z $CI ]]; then
   networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
 fi
+

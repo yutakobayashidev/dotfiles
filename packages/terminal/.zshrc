@@ -1,23 +1,25 @@
-# Fig pre block. Keep at the top of this file.
-export PATH="${PATH}:${HOME}/.local/bin"
-eval "$(fig init zsh pre)"
-
 export PATH=$PATH:$HOME/scripts
-export PATH="$PATH:/opt/homebrew/bin/"
-export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 
-eval "$(starship init zsh)"
-eval "$(gh completion -s zsh)"
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
-. /opt/homebrew/opt/asdf/asdf.sh
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# Homebrew, asdf-vm
+
+if [ -f "/opt/homebrew/bin/brew"  ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    . $(brew --prefix asdf)/libexec/asdf.sh
+    . ~/.asdf/plugins/java/set-java-home.zsh
+fi
 
 # alias
 
-alias ls="colorls"
-alias ll='colorls -l'
+alias cat="bat"
 alias lscmd="ls ~/scripts"
 alias mccmd='java -jar -Xms4G -Xmx4G' 
-alias code="open -a 'Visual Studio Code'"
 alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
 alias vi="nvim"
 alias y='yarn'
@@ -29,10 +31,10 @@ alias gitrm='rm -rf .git'
 alias ghw='gh repo view -w $(ghq list | peco)'
 alias vs='code $(ghq list -p | peco)'
 alias pr='gh pr view --web'
-alias ze="yarn zenn"
-alias zep="yarn zenn preview"
+alias ze="npx zenn"
+alias zep="npx zenn preview"
 
-# export
+eval "$(starship init zsh)"
 
 export GPG_TTY=$TTY
 
@@ -41,9 +43,16 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH="/opt/homebrew/sbin:$PATH"
 
 export PATH=$PATH:$(yarn global bin)
+
+export PNPM_HOME="/Users/yuta/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 
 # source
 
@@ -53,40 +62,25 @@ source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh
 source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 source $ZPLUG_HOME/init.zsh
 
-# plugins
-
-zplug "marzocchi/zsh-notify"
-zplug "b4b4r07/enhancd", use:"init.sh"
-
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
   autoload -Uz compinit && compinit
 fi
 
+# zplug plugins
+
+zplug "marzocchi/zsh-notify"
+zplug "b4b4r07/enhancd", use:"init.sh"
+
 if ! zplug check --verbose; then
-  printf 'Install? [y/N]: '
-  if read -q; then
-    echo; zplug install
-  fi
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
 
 zplug load
 
-# bookmarks
-# https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
-
-
-if [ -d "$HOME/.bookmarks" ]; then
-    export CDPATH=".:$HOME/.bookmarks:"
-    alias goto="cd -P"
-fi
-
-function bookmark {
-    local current_dir=$(pwd)
-    ln -s $current_dir ~/.bookmarks/@$(basename $current_dir)
-}
-
-# fbr - checkout git branch
 fbr() {
   local branches branch
   branches=$(git branch -vv) &&
@@ -103,9 +97,6 @@ function mkcd() {
       fi
 }
 
-# https://qiita.com/sfuta/items/a72f7bd194a61353c9fe
-
-# hook関数precmd実行
 __call_precmds() {
   type precmd > /dev/null 2>&1 && precmd
   for __pre_func in $precmd_functions; do $__pre_func; done
@@ -115,7 +106,7 @@ __call_precmds() {
 __cd_up()   { builtin cd ..; echo "\r\n"; __call_precmds; zle reset-prompt }
 zle -N __cd_up;   bindkey '^[[1;2A' __cd_up
 
-# terminal
+# terminal title
 
 echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
 function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
@@ -143,6 +134,3 @@ gcre() {
     git checkout -b develop;
     git push -u origin develop;
 }
-
-# Fig post block. Keep at the bottom of this file.
-eval "$(fig init zsh post)"

@@ -4,7 +4,59 @@
   "eslint.format.enable": false,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.singleQuote": true,
+  "editor.mouseWheelZoom": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "workbench.colorTheme": "GitHub Light",
+  "editor.fontFamily": "Fira Code,Menlo, Monaco, 'Courier New', monospace",
+  "security.workspace.trust.enabled": false,
+  "editor.inlineSuggest.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "explorer.compactFolders": false,
+  "files.exclude": {
+    "**/.DS_Store": false,
+    "**/.git": false
+  },
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.accessibilitySupport": "on",
+  "dart.flutterSdkPaths": ["/Users/yuta/.asdf/installs/flutter/"],
+  "window.zoomLevel": 1,
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.python"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -13,22 +65,5 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "security.workspace.trust.untrustedFiles": "open",
-  "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
-  "workbench.colorTheme": "Dracula",
-  "editor.fontFamily": "Fira Code,Menlo, Monaco, 'Courier New', monospace",
-  "security.workspace.trust.enabled": false,
-  "editor.inlineSuggest.enabled": true,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "files.exclude": {
-    "**/.DS_Store": false,
-    "**/.git": false
-  },
-  "prettier.jsxSingleQuote": true,
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
-  "editor.accessibilitySupport": "on"
+  }
 }

@@ -1,8 +1,7 @@
-nodejs 16.6.0 14.17.0
-yarn 1.22.10
-pnpm 5.16.0
-golang 1.16.5
-rust 1.56.0
-deno 1.17.2
-python 3.9.1 2.7.18
-ruby 3.0.1
+nodejs 19.8.1 16.6.0
+pnpm 8.2.0
+yarn 1.22.19
+python 3.11.3
+rust 1.68.2
+flutter 3.7.11-stable
+java corretto-18.0.2.9.1
