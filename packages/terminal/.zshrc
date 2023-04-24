@@ -18,6 +18,7 @@ fi
 # alias
 
 alias cat="bat"
+alias gundo="git reset --soft HEAD^"   
 alias lscmd="ls ~/scripts"
 alias mccmd='java -jar -Xms4G -Xmx4G' 
 alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
