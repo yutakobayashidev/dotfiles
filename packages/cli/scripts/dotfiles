@@ -55,7 +55,7 @@ ensure_dir "$GIT_CLONE_PATH"
 if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
     echo '📌 Clone dotfiles'
     cd "$GIT_CLONE_PATH"
-    git clone https://github.com/yutakobaayshidev/dotfiles.git
+    git clone https://github.com/yutakobayashidev/dotfiles.git
 fi
 
 if [ ! "$skip_apps" ]; then
