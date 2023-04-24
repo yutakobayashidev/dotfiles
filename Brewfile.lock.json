@@ -2489,6 +2489,24 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "epic-games": {
+        "version": "14.6.2",
+        "options": {
+          "full_name": "epic-games",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "unity-hub": {
+        "version": "3.4.2",
+        "options": {
+          "full_name": "unity-hub",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
