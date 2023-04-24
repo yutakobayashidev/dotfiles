@@ -3,7 +3,7 @@
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/yutakobayashidev/dotfiles/blob/main/LICENSE)
 ![macos](https://github.com/yutakobayashidev/dotfiles/workflows/macos/badge.svg)
 
-dotfiles for macOS & Linux
+dotfiles for macOS
 
 ## Installation
 
