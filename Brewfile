@@ -114,7 +114,6 @@ cask "spotify"
 cask "tableplus"
 cask "tor-browser"
 cask "unity-hub"
-
 cask "visual-studio-code"
 
 if ENV.fetch('CI', 'false') == 'false'
