@@ -66,11 +66,6 @@ fi
 echo '🔗 Link dotfiles'
 ensure_dir ~/.config/gh
 
-VSCODE_SETTING_DIR=~/Library/Application\ Support/Code/User
-
-rm "$VSCODE_SETTING_DIR/settings.json"
-rm "$VSCODE_SETTING_DIR/keybindings.json"
-
 find . -name '.DS_Store' -type f -ls -delete
 stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
