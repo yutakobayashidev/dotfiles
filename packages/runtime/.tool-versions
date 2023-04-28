@@ -5,3 +5,4 @@ python 3.11.3
 rust 1.68.2
 flutter 3.7.11-stable
 java corretto-18.0.2.9.1
+deno 1.32.5
