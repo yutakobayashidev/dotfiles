@@ -110,7 +110,6 @@ cask "ogdesign-eagle"
 cask "proxyman"
 cask "qmk-toolbox"
 cask "raycast"
-cask "readdle-spark"
 cask "signal"
 cask "slack"
 cask "spotify"
@@ -124,7 +123,7 @@ if ENV.fetch('CI', 'false') == 'false'
     mas "DaVinci Resolve", id: 571213070
     mas "Draw Things", id: 6444050820
     mas "RunCat", id: 1429033973
-    # mas "TestFlight", id: 899247664 https://github.com/electron/osx-sign/issues/251
+    mas "TestFlight", id: 899247664
     mas "Twitter", id: 1482454543
     mas "Xcode", id: 497799835
 end
