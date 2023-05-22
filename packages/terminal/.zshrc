@@ -25,6 +25,7 @@ alias yi='yarn install'
 alias ya='yarn add'
 alias n='npm'
 alias ni='npm install'
+alias pn="pnpm"
 alias gitrm='rm -rf .git'
 alias ghw='gh repo view -w $(ghq list | peco)'
 alias vs='code $(ghq list -p | peco)'
