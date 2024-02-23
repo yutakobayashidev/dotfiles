@@ -1,6 +1,5 @@
 {
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.editor.untitled.hint": "hidden",
   "eslint.format.enable": false,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -8,22 +7,21 @@
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
-  "workbench.colorTheme": "GitHub Light",
+  "workbench.colorTheme": "GitHub Dark Default",
   "editor.fontFamily": "Fira Code,Menlo, Monaco, 'Courier New', monospace",
   "security.workspace.trust.enabled": false,
   "editor.inlineSuggest.enabled": true,
-  "diffEditor.ignoreTrimWhitespace": false,
   "explorer.compactFolders": false,
   "files.exclude": {
     "**/.DS_Store": false,
     "**/.git": false
   },
   "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
+    "FIG_NEW_SESSION": "1",
+    "CW_NEW_SESSION": "1"
   },
   "editor.accessibilitySupport": "on",
   "dart.flutterSdkPaths": ["/Users/yuta/.asdf/installs/flutter/"],
-  "window.zoomLevel": 1,
   "yaml.customTags": [
     "!And",
     "!And sequence",
@@ -65,5 +63,24 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "workbench.startupEditor": "none",
+  "python.analysis.extraPaths": [
+    "/Users/yuta/.asdf/installs/python/3.11.3/lib/python3.11/site-packages"
+  ],
+  "aws.suppressPrompts": {
+    "codeWhispererConnectionExpired": true,
+    "codeWhispererNewWelcomeMessage": true
+  },
+  "audioCues.lineHasError": "off",
+  "workbench.editor.empty.hint": "hidden",
+  "backgroundCover.imagePath": "/Users/yuta/Downloads/FireShot/Fd0QMGKaMAUhjEQ.jpeg",
+  "backgroundCover.opacity": 0.35,
+  "audioCues.chatResponsePending": "off",
+  "audioCues.diffLineDeleted": "off",
+  "audioCues.diffLineModified": "off",
+  "svg.preview.mode": "svg",
+  "window.zoomLevel": 1
 }

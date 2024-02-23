@@ -1,5 +1,5 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 
 export PATH=$PATH:$HOME/scripts
 
@@ -52,6 +52,8 @@ case ":$PATH:" in
 esac
 
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
+export BUN_INSTALL=$HOME/.bun
+export PATH=$BUN_INSTALL/bin:$PATH
 
 # source
 
@@ -60,6 +62,7 @@ export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 source $ZPLUG_HOME/init.zsh
+source "$HOME/.asdf/installs/rust/1.68.2/env"
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -134,5 +137,12 @@ gcre() {
     git push -u origin develop;
 }
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# bun completions
+[ -s "/Users/yuta/.bun/_bun" ] && source "/Users/yuta/.bun/_bun"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# CodeWhisperer post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"

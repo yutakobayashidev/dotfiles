@@ -1,6 +1,7 @@
 [user]
-	email = 91340399+yutakobayashidev@users.noreply.github.com
+	email = hi@yutakobayashi.dev
 	name = yutakobaayshidev
+	signingkey = FF8A570917DEC092
 [core]
 	excludesfile = ~/.gitignore_global
 	precomposeUnicode = true
@@ -15,3 +16,5 @@
     rebase = false
 [ghq]
   root = ~/Documents/projects
+[commit]
+	gpgsign = true
