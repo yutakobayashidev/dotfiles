@@ -2,6 +2,8 @@
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 export PATH=$PATH:$HOME/scripts
 
+export GPG_TTY=$TTY
+
 # Homebrew, asdf-vm
 
 if [ -f "/opt/homebrew/bin/brew"  ]; then
@@ -33,8 +35,6 @@ alias zep="npx zenn preview"
 
 eval "$(starship init zsh)"
 eval "$(mise activate zsh)"
-
-export GPG_TTY=$TTY
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
