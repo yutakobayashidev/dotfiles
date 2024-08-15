@@ -1,0 +1,11 @@
+[tools]
+node = "20"
+pnpm = "9"
+yarn = "latest"
+python = "latest"
+rust = "latest"
+flutter = "latest"
+java = "latest"
+deno = "latest"
+bun = "latest"
+zig = "latest"

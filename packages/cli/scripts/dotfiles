@@ -82,44 +82,6 @@ if [ "$(uname)" = "Darwin" ]; then
     ~/scripts/macos-defaults
 fi
 
-## install extention
-
-if [ ! "$skip_apps" ]; then
-cd "$STOW_PACKAGES_PATH/editor/Library/Application Support/Code/User"
-cat extensions | while read line
-do
- code --install-extension $line
-done
-fi
-
-# asdf
-
-for plugin in $(awk '{print $1}' ~/.tool-versions); do
-    if ! is_dir ~/.asdf/plugins/"$plugin"; then
-        asdf plugin add "$plugin"
-    fi
-done
-
-is_runtime_versions_changed () {
-    plugin="$1"
-    specified=$(grep "$plugin" ~/.tool-versions | awk '{$1=""; print $0}')
-    installed=$(asdf list "$plugin" 2>&1)
-
-    is_changed=
-    for version in $specified; do
-        match=$(echo "$installed" | grep "$version")
-        [ -z "$match" ] && is_changed=1
-    done
-
-    [ "$is_changed" ]
-}
-
-for plugin in $(asdf plugin list); do
-    if is_runtime_versions_changed "$plugin"; then
-        echo "Install runtime: $plugin"
-        asdf install "$plugin"
-    fi
-done
 
 # Done
 

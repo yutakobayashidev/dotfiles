@@ -2,12 +2,12 @@
   "workbench.iconTheme": "material-icon-theme",
   "eslint.format.enable": false,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "biomejs.biome",
   "editor.mouseWheelZoom": true,
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
-  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.colorTheme": "df23dabc-61eb-4559-a504-992786964602",
   "editor.fontFamily": "Fira Code,Menlo, Monaco, 'Courier New', monospace",
   "security.workspace.trust.enabled": false,
   "editor.inlineSuggest.enabled": true,
@@ -18,7 +18,8 @@
   },
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1",
-    "CW_NEW_SESSION": "1"
+    "CW_NEW_SESSION": "1",
+    "Q_NEW_SESSION": "1"
   },
   "editor.accessibilitySupport": "on",
   "dart.flutterSdkPaths": ["/Users/yuta/.asdf/installs/flutter/"],
@@ -56,13 +57,13 @@
     "editor.defaultFormatter": "ms-python.python"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
@@ -74,13 +75,59 @@
     "codeWhispererConnectionExpired": true,
     "codeWhispererNewWelcomeMessage": true
   },
-  "audioCues.lineHasError": "off",
   "workbench.editor.empty.hint": "hidden",
   "backgroundCover.imagePath": "/Users/yuta/Downloads/FireShot/Fd0QMGKaMAUhjEQ.jpeg",
   "backgroundCover.opacity": 0.35,
-  "audioCues.chatResponsePending": "off",
-  "audioCues.diffLineDeleted": "off",
-  "audioCues.diffLineModified": "off",
   "svg.preview.mode": "svg",
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "accessibility.signals.lineHasError": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineDeleted": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineModified": {
+    "sound": "off"
+  },
+  "git.confirmSync": false,
+  "accessibility.signals.progress": {
+    "sound": "off"
+  },
+  "zig.initialSetupDone": true,
+  "zig.path": "zig",
+  "zig.zls.path": "zls",
+  "hexeditor.columnWidth": 16,
+  "hexeditor.showDecodedText": true,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+  "prisma.showPrismaDataPlatformNotification": false,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "satokaz.vscode-bs-ctrlchar-remover"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "background.windowBackgrounds": [
+    "/Users/yuta/Downloads/Orangestar - DAYBREAK FRONTLINE \\(feat. IA\\) Official Video 3-17 screenshot.png"
+  ],
+  "background.backgroundOpacity": [
+    0.8,
+    0.9,
+    0.9,
+    0.9
+  ],
+  "background.backgroundRepeat": [
+    "No Repeat",
+    "No Repeat",
+    "No Repeat",
+    "No Repeat"
+  ],
+  "background.backgroundChangeTime": [
+    300,
+    0,
+    0,
+    0
+  ],
+  "background.autoInstall": false
 }

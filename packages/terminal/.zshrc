@@ -1,23 +1,20 @@
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
-
+# Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 export PATH=$PATH:$HOME/scripts
 
 # Homebrew, asdf-vm
 
 if [ -f "/opt/homebrew/bin/brew"  ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
-
-    . $(brew --prefix asdf)/libexec/asdf.sh
-    . ~/.asdf/plugins/java/set-java-home.zsh
 fi
 
 # alias
 
 alias cat="bat"
-alias gundo="git reset --soft HEAD^"   
+alias g="git"
+alias gundo="git reset --soft HEAD^"
 alias lscmd="ls ~/scripts"
-alias mccmd='java -jar -Xms4G -Xmx4G' 
+alias mccmd='java -jar -Xms4G -Xmx4G'
 alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
 alias vi="nvim"
 alias y='yarn'
@@ -26,6 +23,7 @@ alias ya='yarn add'
 alias n='npm'
 alias ni='npm install'
 alias pn="pnpm"
+alias p="pnpm"
 alias gitrm='rm -rf .git'
 alias ghw='gh repo view -w $(ghq list | peco)'
 alias vs='code $(ghq list -p | peco)'
@@ -34,6 +32,7 @@ alias ze="npx zenn"
 alias zep="npx zenn preview"
 
 eval "$(starship init zsh)"
+eval "$(mise activate zsh)"
 
 export GPG_TTY=$TTY
 
@@ -43,7 +42,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-export PATH=$PATH:$(yarn global bin)
+export PATH="$HOME/.local/share/mise/shims:$PATH"
 
 export PNPM_HOME="/Users/yuta/Library/pnpm"
 case ":$PATH:" in
@@ -54,15 +53,14 @@ esac
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 export BUN_INSTALL=$HOME/.bun
 export PATH=$BUN_INSTALL/bin:$PATH
+export SIMPLE_GIT_HOOKS_RC="$HOME/.simple-git-hooks.rc"
 
 # source
 
 . $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-. $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 source $ZPLUG_HOME/init.zsh
-source "$HOME/.asdf/installs/rust/1.68.2/env"
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -144,5 +142,6 @@ gcre() {
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+
+# Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
