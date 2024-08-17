@@ -2,7 +2,7 @@
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 export PATH=$PATH:$HOME/scripts
 
-export GPG_TTY=$TTY
+export GPG_TTY=$(tty)
 
 # Homebrew, asdf-vm
 
@@ -32,6 +32,7 @@ alias vs='code $(ghq list -p | peco)'
 alias pr='gh pr view --web'
 alias ze="npx zenn"
 alias zep="npx zenn preview"
+alias ll='ls -l'
 
 eval "$(starship init zsh)"
 eval "$(mise activate zsh)"
