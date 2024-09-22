@@ -106,7 +106,7 @@
     "editor.defaultFormatter": "satokaz.vscode-bs-ctrlchar-remover"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "background.windowBackgrounds": [
     "/Users/yuta/Downloads/Orangestar - DAYBREAK FRONTLINE \\(feat. IA\\) Official Video 3-17 screenshot.png"
@@ -129,5 +129,6 @@
     0,
     0
   ],
-  "background.autoInstall": false
+  "background.autoInstall": false,
+  "background.useInvertedOpacity": true
 }

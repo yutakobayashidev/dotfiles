@@ -4,7 +4,7 @@ export PATH=$PATH:$HOME/scripts
 
 export GPG_TTY=$(tty)
 
-# Homebrew, asdf-vm
+# Homebrew
 
 if [ -f "/opt/homebrew/bin/brew"  ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -14,6 +14,7 @@ fi
 
 alias cat="bat"
 alias g="git"
+alias grename='git branch -m'
 alias gundo="git reset --soft HEAD^"
 alias lscmd="ls ~/scripts"
 alias mccmd='java -jar -Xms4G -Xmx4G'
@@ -136,6 +137,21 @@ gcre() {
     git push -u origin develop;
 }
 
+swap_git_staged_files() {
+  staged_files=($(git diff --name-only --cached))
+
+  unstaged_files=($(git diff --name-only))
+
+  if [ ${#staged_files[@]} -ne 0 ]; then
+    git reset ${staged_files[@]}
+  fi
+
+  if [ ${#unstaged_files[@]} -ne 0 ]; then
+    git add ${unstaged_files[@]}
+  fi
+
+  echo "Staged and unstaged files have been swapped."
+}
 # bun completions
 [ -s "/Users/yuta/.bun/_bun" ] && source "/Users/yuta/.bun/_bun"
 
