@@ -5444,6 +5444,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "ollama": {
+        "version": "0.3.11",
+        "options": {
+          "full_name": "ollama",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
